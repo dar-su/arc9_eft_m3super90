@@ -622,7 +622,6 @@ SWEP.Animations = {
 
     ["cycle"] = { Source = {"pump0","pump1","pump2"}, EventTable = cock },
 
-
     ["look"] = { Source = "look", MinProgress = 0.95, FireASAP = true, EventTable = look },
     ["look_empty"] = { Source = "look_empty", MinProgress = 0.95, FireASAP = true, EventTable = look },
 
@@ -637,17 +636,31 @@ SWEP.Animations = {
     ["toggle"] = {        Source = "mod_switch", EventTable = switchi },
     ["switchsights"] = {  Source = "mod_switch", EventTable = switchi },
 
-
     ["firemode_1"] = { Source = "sa_to_pa", EventTable = cock },
     ["firemode_2"] = { Source = "pa_to_sa", EventTable = cock },
     ["firemode_1_empty"] = { Source = "sa_to_pa_empty", EventTable = cock }, -- disallow swtiching firemodes while empty !! ! 
     ["firemode_2_empty"] = { Source = "pa_to_sa_empty", EventTable = cock },
 
-
     
     ["sa_ammo_in_first_catch"] = { Source = "sa_ammo_in_first_catch", EventTable = nil, RestoreAmmo = 1 },
     ["pa_ammo_in_first"] = { Source = {"pa_ammo_in_first_0", "pa_ammo_in_first_0", "pa_ammo_in_first_1", "pa_ammo_in_first_2"}, EventTable = nil, RestoreAmmo = 1 },
     ["reload_start"] = { Source = "reload_start", EventTable = nil, RestoreAmmo = 1 },
+    ["reload_in_loop"] = { Source = "reload_in_loop", EventTable = nil},
+    ["reload_in_loop3"] = { Source = "reload_in_loop3", EventTable = nil},
+    ["reload_end"] = { Source = "reload_end", EventTable = nil},
+    ["reload_end2"] = { Source = "reload_end2", EventTable = nil},
+    ["fistful_start"] = { Source = "fistful_start", EventTable = nil},
+    ["fistful1"] = { Source = "fistful1", EventTable = nil},
+    ["fistful2"] = { Source = "fistful2", EventTable = nil},
+    ["fistful3"] = { Source = "fistful3", EventTable = nil},
+    ["fistful4"] = { Source = "fistful4", EventTable = nil},
+    ["fistful5"] = { Source = "fistful5", EventTable = nil},
+    ["fistful5next"] = { Source = "fistful5next", EventTable = nil},
+    ["fistful_abort_1"] = { Source = "fistful_abort_1", EventTable = nil},
+    ["fistful_abort_2"] = { Source = "fistful_abort_2", EventTable = nil},
+    ["fistful_abort_3"] = { Source = "fistful_abort_3", EventTable = nil},
+    ["fistful_abort_4"] = { Source = "fistful_abort_4", EventTable = nil},
+    ["fistful_end"] = { Source = "fistful_end", EventTable = nil},
 }
 
 ------------------------- [[[           Attachments            ]]] -------------------------
