@@ -29,7 +29,7 @@ SWEP.Description = [[The Benelli M3 S90 is a dual-mode shotgun designed and manu
 -- }
     
 SWEP.Slot = 1
-SWEP.WorldModel = "models/weapons/w_357.mdl"
+SWEP.WorldModel = "models/weapons/w_shot_xm1014.mdl"
 SWEP.ViewModel = "models/weapons/arc9/darsu_eft/c_m3super90.mdl"
 SWEP.ViewModelFOVBase = 62
 SWEP.MirrorVMWM = true
@@ -222,7 +222,7 @@ SWEP.TracerColor = Color(255, 225, 200)
 --          Positions and offsets
 
 SWEP.IronSights = {
-    Pos = Vector(-4.28, -5, 1.67),
+    Pos = Vector(-4.27, -5, 0.567),
     Ang = Angle(0, 0.06, 0),
     Midpoint = { Pos = Vector(-1, 0, 8), Ang = Angle(0, 0, -145) },
     Magnification = 1.1,
@@ -255,9 +255,10 @@ SWEP.HoldTypeSights = "rpg"
 SWEP.HoldTypeCustomize = "physgun"
 
 SWEP.WorldModelOffset = {
-    Pos = Vector(-8.3, 5.5, -6),
+    Pos = Vector(-7.8, 5.5, -5),
     Ang = Angle(-7, 0, 180),
-    TPIKPos = Vector(-5, 5, -4), -- rpg
+    -- TPIKPos = Vector(-3.5, 6, -3), -- rpg ghhh     good for reload but awful on crouch
+    TPIKPos = Vector(-7, 5, 0), -- rpg
     TPIKAng = Angle(-11.5, 0, 180),
     Scale = 1
 }
@@ -297,16 +298,21 @@ SWEP.EjectDelay = 0.05
 
 ------------------------- [[[           Sounds            ]]] -------------------------
 
-local path = "weapons/darsu_eft/rsh12/"
+local path = "weapons/darsu_eft/m3s90/"
 
 SWEP.ShootPitchVariation = 0
 SWEP.DistantShootVolume = 0.05
 SWEP.DistantShootVolumeActual = 0.05
 
-SWEP.ShootSound = path .. "rsh_12_outdoor_close_oneshot.wav"
-SWEP.ShootSoundIndoor = path .. "rsh_12_indoor_close_oneshot.wav"
-SWEP.DistantShootSound = path .. "rsh_12_outdoor_distant_oneshot.wav"
-SWEP.DistantShootSoundIndoor = path .. "rsh_12_indoor_distant_oneshot.wav"
+SWEP.ShootSound = path .. "m3_fire_outdoor_close.wav"
+SWEP.ShootSoundIndoor = path .. "m3_fire_indoor_close.wav"
+SWEP.DistantShootSound = path .. "m3_fire_outdoor_distant.wav"
+SWEP.DistantShootSoundIndoor = path .. "m3_fire_indoor_distant.wav"
+
+SWEP.ShootSoundSilenced = path .. "m3_fire_outdoor_silenced_close.wav"
+SWEP.ShootSoundSilencedIndoor = path .. "m3_fire_indoor_silenced_close.wav"
+SWEP.DistantShootSoundSilenced = path .. "m3_fire_outdoor_silenced_distant.wav"
+SWEP.DistantShootSoundSilencedIndoor = path .. "m3_fire_indoor_silenced_distant.wav"
 
 SWEP.FiremodeSound = "" -- we will have own in sound tables
 SWEP.ToggleAttSound = "" -- we will have own in sound tables
@@ -335,11 +341,11 @@ SWEP.ExitSightsSound = "arc9_eft_shared/weap_handoff.wav"
 
 SWEP.ShotgunReload = true
 -- SWEP.ShellVelocity = 0
-SWEP.NoForceSetLoadedRoundsOnReload = true 
 SWEP.ManualActionNoLastCycle = false
 SWEP.ManualActionEjectAnyway = false
 
 local infitieammoconvar = GetConVar("arc9_infinite_ammo")
+
 SWEP.Hook_TranslateAnimation = function(swep, anim)
     local elements = swep:GetElements()
     
@@ -442,185 +448,83 @@ local randspin = {"arc9_eft_shared/weapon_generic_rifle_spin1.wav","arc9_eft_sha
 local pouchin = {"arc9_eft_shared/generic_mag_pouch_in1.wav","arc9_eft_shared/generic_mag_pouch_in2.wav","arc9_eft_shared/generic_mag_pouch_in3.wav","arc9_eft_shared/generic_mag_pouch_in4.wav","arc9_eft_shared/generic_mag_pouch_in5.wav","arc9_eft_shared/generic_mag_pouch_in6.wav","arc9_eft_shared/generic_mag_pouch_in7.wav"}
 local pouchout = {"arc9_eft_shared/generic_mag_pouch_out1.wav","arc9_eft_shared/generic_mag_pouch_out2.wav","arc9_eft_shared/generic_mag_pouch_out3.wav","arc9_eft_shared/generic_mag_pouch_out4.wav","arc9_eft_shared/generic_mag_pouch_out5.wav","arc9_eft_shared/generic_mag_pouch_out6.wav","arc9_eft_shared/generic_mag_pouch_out7.wav"}
 local switchi = { { s = {"arc9_eft_shared/weapon_light_switcher1.wav", "arc9_eft_shared/weapon_light_switcher2.wav", "arc9_eft_shared/weapon_light_switcher3.wav"}, t = 0 } }
+local shell_in = {path .. "m3_shell_in1.wav", path .. "m3_shell_in2.wav", path .. "m3_shell_in3.wav"}
 
-local magcheck = {
+local readypa = {
     { s = randspin, t = 0 },
-    { s = path .. "rhino_drum_releasebutton.wav", t = 0.05 },
-    { s = path .. "rsh_12_reload_start.wav", t = 4/24 },
-    { s = randspin, t = 35/24 },
-    { s = path .. "rsh_12_reload_end.wav", t = 49/24 },
-    { s = randspin, t = 63/24 },
+    { s = path .. "m3_pump_in.wav", t = 0.56 },
+    { s = path .. "m3_pump_out.wav", t = 0.73 },
+    { s = randspin, t = 0.99 },
 }
+local readysa = {
+    { s = randspin, t = 0 },
+    { s = path .. "m3_bolt_in.wav", t = 0.52 },
+    { s = path .. "m3_bolt_out.wav", t = 0.72 },
+    { s = randspin, t = 0.81 },
+}
+
+local cycle = {
+    { s = path .. "m3_pump_in.wav", t = 0.01 },
+    { s = path .. "m3_pump_out.wav", t = 0.25 },
+}
+
 local look = {
     { s = randspin, t = 0.05 },
-    { s = randspin, t = 23/24 },
-    { s = randspin, t = 37/24 },
-    { s = randspin, t = 58/24 },
-    { s = randspin, t = 67/24 },
-}
-local cock = {
-    { s = randspin, t = 0 },
-    { s = path .. "rsh_12_cock.wav", t = 5/24 },
+    { s = randspin, t = 1.26 },
+    { s = randspin, t = 2.54 },
 }
 
-local sg_start1 = {
-    { s = randspin, t = 0 },  
-    { s = path .. "rhino_drum_releasebutton.wav", t = 2/26 },
-    { s = path .. "rsh_12_reload_start.wav", t = 4/26 },
-    { s = randspin, t = 21/26 },  
-    { s = path .. "rsh_12_shell_out.wav", t = 43/26 },
-    { s = path .. "rsh_12_shell_out.wav", t = 69/26 },
-    { s = path .. "rsh_12_shell_out.wav", t = 93/26 },
-    { s = path .. "rsh_12_shell_out.wav", t = 117/26 },
-    {shelleject = true, att = 2, t = 50/26},
-    {shelleject = true, att = 2, t = 75/26},
-    {shelleject = true, att = 2, t = 98/26},
-    {shelleject = true, att = 2, t = 129/26},
-}
-local sg_insert1 = {
-    { s = randspin, t = 0/28 },
-    { s = path .. "rsh_12_ammo_in.wav", t = 14/28 },
-}
-local sg_insert2 = {
-    { s = path .. "rsh_12_ammo_in.wav", t = 13/28 },
-}
-local sg_insert3 = {
-    { s = randspin, t = 0/28 },
-    { s = path .. "rsh_12_ammo_in.wav", t = 13/28 },
-}
-local sg_insert4 = {
-    { s = path .. "rsh_12_ammo_in.wav", t = 12/28 },
-}
-local sg_end = {
-    { s = randspin, t = 6/26 },
-    { s = path .. "rsh_12_reload_end.wav", t = 6/26 },
-    { s = randspin, t = 22/26 },
+local magcheck = {
+    { s = randspin, t = 0.1 },
+    { s = path .. "mr133_magcover.wav", t = 0.36 },
+    { s = randspin, t = 1.09 },
 }
 
-local ff_start5 = {
-    { s = randspin, t = 2/26 },  
-    { s = path .. "rhino_drum_releasebutton.wav", t = 9/26 },
-    { s = path .. "rsh_12_reload_start.wav", t = 12/26 },
-    { s = randspin, t = 22/26 },  
-    { s = path .. "rhino_drum_extractor.wav", t = 18/26 },
-    { s = path .. "rsh_12_purge_shells.wav", t = 27/26 },
-    { s = randspin, t = 36/26 },  
-    { s = "arc9_eft_shared/weap_magin_sbrosnik.wav", t = 49/26 },
-    {shelleject = true, att = 2, t = 1.6},
-    {shelleject = true, att = 2, t = 1.65},
-    {shelleject = true, att = 2, t = 1.7},
-    {shelleject = true, att = 2, t = 1.75},
-    {shelleject = true, att = 2, t = 1.8},
+local checkchamber_pa = {
+    { s = randspin, t = 0.05 },
+    { s = path .. "m3_pump_in_check.wav", t = 0.34 },
+    { s = path .. "m3_pump_out_check.wav", t = 1.19 },
+    { s = randspin, t = 1.36 },
 }
-local ff_start4 = {
-    { s = randspin, t = 2/26 },  
-    { s = path .. "rhino_drum_releasebutton.wav", t = 9/26 },
-    { s = path .. "rsh_12_reload_start.wav", t = 12/26 },
-    { s = randspin, t = 22/26 },  
-    { s = path .. "rhino_drum_extractor.wav", t = 18/26 },
-    { s = path .. "rsh_12_purge_shells.wav", t = 27/26 },
-    { s = randspin, t = 36/26 },  
-    { s = "arc9_eft_shared/weap_magin_sbrosnik.wav", t = 49/26 },
-    {shelleject = true, att = 2, t = 1.6},
-    {shelleject = true, att = 2, t = 1.65},
-    {shelleject = true, att = 2, t = 1.7},
-    {shelleject = true, att = 2, t = 1.75},
+local checkchamber_sa = {
+    { s = randspin, t = 0.05 },
+    { s = path .. "m3_bolt_in_check.wav", t = 0.72 },
+    { s = path .. "m3_bolt_out_check.wav", t = 1.24 },
+    { s = randspin, t = 1.45 },
 }
-local ff_start3 = {
-    { s = randspin, t = 2/26 },  
-    { s = path .. "rhino_drum_releasebutton.wav", t = 9/26 },
-    { s = path .. "rsh_12_reload_start.wav", t = 12/26 },
-    { s = randspin, t = 22/26 },  
-    { s = path .. "rhino_drum_extractor.wav", t = 18/26 },
-    { s = path .. "rsh_12_purge_shells.wav", t = 27/26 },
-    { s = randspin, t = 36/26 },  
-    { s = "arc9_eft_shared/weap_magin_sbrosnik.wav", t = 49/26 },
-    {shelleject = true, att = 2, t = 1.6},
-    {shelleject = true, att = 2, t = 1.65},
-    {shelleject = true, att = 2, t = 1.7},
+local checkchamber_sa_empty = {
+    { s = randspin, t = 0.1 },
+    { s = randspin, t = 0.82 },
 }
-local ff_start2 = {
-    { s = randspin, t = 2/26 },  
-    { s = path .. "rhino_drum_releasebutton.wav", t = 9/26 },
-    { s = path .. "rsh_12_reload_start.wav", t = 12/26 },
-    { s = randspin, t = 22/26 },  
-    { s = path .. "rhino_drum_extractor.wav", t = 18/26 },
-    { s = path .. "rsh_12_purge_shells.wav", t = 27/26 },
-    { s = randspin, t = 36/26 },  
-    { s = "arc9_eft_shared/weap_magin_sbrosnik.wav", t = 49/26 },
-    {shelleject = true, att = 2, t = 1.6},
-    {shelleject = true, att = 2, t = 1.65},
-}
-local ff_start1 = {
-    { s = randspin, t = 2/26 },  
-    { s = path .. "rhino_drum_releasebutton.wav", t = 9/26 },
-    { s = path .. "rsh_12_reload_start.wav", t = 12/26 },
-    { s = randspin, t = 22/26 },  
-    { s = path .. "rhino_drum_extractor.wav", t = 18/26 },
-    { s = path .. "rsh_12_purge_shells.wav", t = 27/26 },
-    { s = randspin, t = 36/26 },  
-    { s = "arc9_eft_shared/weap_magin_sbrosnik.wav", t = 49/26 },
-    {shelleject = true, att = 2, t = 1.6},
-}
-local ff_insert1 = {
-    { s = randspin, t = 0/30 },
-    { s = path .. "rsh_12_ammo_in.wav", t = 17/30 },
-}
-local ff_insert2 = {
-    { s = path .. "rsh_12_ammo_in.wav", t = 16/30 },
-}
-local ff_insert3 = {
-    { s = randspin, t = 0/30 },
-    { s = path .. "rsh_12_ammo_in.wav", t = 14/30 },
-}
-local ff_insert4 = {
-    { s = path .. "rsh_12_ammo_in.wav", t = 13/30 },
-}
-local ff_insert5 = {
-    { s = path .. "rsh_12_ammo_in.wav", t = 5/30 },
-    { s = randspin, t = 9/30 },
-}
-local ff_end1 = {
-    { s = randspin, t = 3/26 },
-    { s = path .. "rsh_12_reload_end.wav", t = 24/26 },
-    { s = randspin, t = 41/26 },
-}
-local ff_end5 = {
-    { s = path .. "rsh_12_reload_end.wav", t = 6/26 },
-    { s = randspin, t = 24/26 },
+local fistfualabort = {
+    { s = pouchin, t = 0.3 },
+    { s = randspin, t = 0.59 },
+    { s = randspin, t = 0.87 },
 }
 
-local drawa = { { s = "arc9_eft_shared/pm_draw.wav", t = 0 } }
-local holstera = { { s = "arc9_eft_shared/pm_holster.wav", t = 0 } }
-local fireda = { { s = path .. "rhino_hammer_release.wav", t = 0.06 } }
-local firesa = { { s = path .. "rhino_hammer_release.wav", t = 0 } }
-local firedadry = { { s = path .. "rhino_hammer_release.wav", t = 0.17 } }
-local firesadry = { 
-    { s = path .. "rhino_hammer_release.wav", t = 0 },
-    { s = randspin, t = 0.25 },
-    { s = path .. "rsh_12_cock.wav", t = 0.25+5/24 },
- }
+local drawa = { { s = path .. "mr133_draw.wav", t = 0 } }
+local holstera = { { s = path .. "mr133_holster.wav", t = 0 } }
 
 SWEP.Animations = {
-    ["idle"] = { Source = "idle" },
+    ["idle"] = { Source = "idle", Time = 1111 }, -- remove TIME !!!!!!
     ["idle_empty"] = { Source = "idle_empty" },
 
-    ["ready"] = { Source = {"ready0_sa","ready1_sa","ready2_sa"}, EventTable = nil },
-    ["ready_sa"] = { Source = {"ready0_pa","ready1_pa","ready2_pa"}, EventTable = nil },
+    ["ready"] = { Source = {"ready0_sa","ready1_sa","ready2_sa"}, EventTable = readypa },
+    ["ready_sa"] = { Source = {"ready0_pa","ready1_pa","ready2_pa"}, EventTable = readysa },
 
     ["draw"] = { Source = "draw", EventTable = drawa },
     ["holster"] = { Source = "holster", EventTable = holstera },
     ["draw_empty"] = { Source = "draw_empty", EventTable = drawa },
     ["holster_empty"] = { Source = "holster_empty", EventTable = holstera },
 
-    ["fire_sa"] = { Source = "fire", EventTable = fireda },
-    ["fire"] = { Source = "fire_sa", EventTable = firesa, NoIdle = true },
-    ["fire_empty"] = { Source = "fire_salast", EventTable = firesa, NoIdle = true },
+    ["fire_sa"] = { Source = "fire", EventTable = { { s = path .. "m3_hammer_release.wav", t = 0 } } },
+    ["fire"] = { Source = "fire_sa", EventTable = { { s = path .. "m3_hammer_release.wav", t = 0 } }, NoIdle = true },
+    ["fire_empty"] = { Source = "fire_salast", EventTable = { { s = path .. "m3_hammer_release.wav", t = 0 } }, NoIdle = true },
 
-    ["dryfire"] = { Source = "dryfire", EventTable = firesadry },
-    ["dryfire_empty"] = { Source = "dryfire_empty", EventTable = firesadry },
+    ["dryfire"] = { Source = "dryfire", EventTable = { { s = path .. "pm_trigger_empty.wav", t = 0 } } },
+    ["dryfire_empty"] = { Source = "dryfire_empty", EventTable = { { s = path .. "pm_trigger_empty.wav", t = 0 } } },
 
-    ["cycle"] = { Source = {"pump0","pump1","pump2"}, EventTable = cock },
+    ["cycle"] = { Source = {"pump0","pump1","pump2"}, EventTable = cycle },
 
     ["look"] = { Source = "look", MinProgress = 0.95, FireASAP = true, EventTable = look },
     ["look_empty"] = { Source = "look_empty", MinProgress = 0.95, FireASAP = true, EventTable = look },
@@ -628,39 +532,101 @@ SWEP.Animations = {
     ["mag_check"] = { Source = "magcheck", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
     ["mag_check_empty"] = { Source = "magcheck_empty", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
 
-    ["checkchamber_pa"] = { Source = "checkchamber_pa", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
-    ["checkchamber_pa_empty"] = { Source = "checkchamber_pa", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
-    ["checkchamber_sa"] = { Source = "checkchamber_sa", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
-    ["checkchamber_sa_empty"] = { Source = "checkchamber_sa_empty", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
+    ["checkchamber_pa"] = { Source = "checkchamber_pa", MinProgress = 0.95, FireASAP = true, EventTable = checkchamber_pa },
+    ["checkchamber_pa_empty"] = { Source = "checkchamber_pa", MinProgress = 0.95, FireASAP = true, EventTable = checkchamber_pa },
+    ["checkchamber_sa"] = { Source = "checkchamber_sa", MinProgress = 0.95, FireASAP = true, EventTable = checkchamber_sa },
+    ["checkchamber_sa_empty"] = { Source = "checkchamber_sa_empty", MinProgress = 0.95, FireASAP = true, EventTable = checkchamber_sa_empty },
 
     ["toggle"] = {        Source = "mod_switch", EventTable = switchi },
     ["switchsights"] = {  Source = "mod_switch", EventTable = switchi },
 
-    ["firemode_1"] = { Source = "sa_to_pa", EventTable = cock },
-    ["firemode_2"] = { Source = "pa_to_sa", EventTable = cock },
+    ["firemode_1"] = { Source = "sa_to_pa", EventTable = { { s = path .. "m3_switch_to_pa.wav", t = 0.22 } } },
+    ["firemode_2"] = { Source = "pa_to_sa", EventTable = { { s = path .. "m3_switch_to_sa.wav", t = 0.22 } } },
     ["firemode_1_empty"] = { Source = "sa_to_pa_empty", EventTable = cock }, -- disallow swtiching firemodes while empty !! ! 
     ["firemode_2_empty"] = { Source = "pa_to_sa_empty", EventTable = cock },
 
     
-    ["sa_ammo_in_first_catch"] = { Source = "sa_ammo_in_first_catch", EventTable = nil, RestoreAmmo = 1 },
-    ["pa_ammo_in_first"] = { Source = {"pa_ammo_in_first_0", "pa_ammo_in_first_0", "pa_ammo_in_first_1", "pa_ammo_in_first_2"}, EventTable = nil, RestoreAmmo = 1 },
-    ["reload_start"] = { Source = "reload_start", EventTable = nil, RestoreAmmo = 1 },
-    ["reload_in_loop"] = { Source = "reload_in_loop", EventTable = nil},
-    ["reload_in_loop3"] = { Source = "reload_in_loop3", EventTable = nil},
-    ["reload_end"] = { Source = "reload_end", EventTable = nil},
-    ["reload_end2"] = { Source = "reload_end2", EventTable = nil},
-    ["fistful_start"] = { Source = "fistful_start", EventTable = nil},
-    ["fistful1"] = { Source = "fistful1", EventTable = nil},
-    ["fistful2"] = { Source = "fistful2", EventTable = nil},
-    ["fistful3"] = { Source = "fistful3", EventTable = nil},
-    ["fistful4"] = { Source = "fistful4", EventTable = nil},
-    ["fistful5"] = { Source = "fistful5", EventTable = nil},
-    ["fistful5next"] = { Source = "fistful5next", EventTable = nil},
-    ["fistful_abort_1"] = { Source = "fistful_abort_1", EventTable = nil},
-    ["fistful_abort_2"] = { Source = "fistful_abort_2", EventTable = nil},
-    ["fistful_abort_3"] = { Source = "fistful_abort_3", EventTable = nil},
-    ["fistful_abort_4"] = { Source = "fistful_abort_4", EventTable = nil},
-    ["fistful_end"] = { Source = "fistful_end", EventTable = nil},
+    ["sa_ammo_in_first_catch"] = { Source = "sa_ammo_in_first_catch", RestoreAmmo = 1, EventTable = { 
+        { s = randspin, t = 0.1 },
+        { s = path .. "mr133_shell_pickup.wav", t = 0.64 },
+        { s = path .. "m3_shell_in_first.wav", t = 1.02 },
+        { s = path .. "m3_bolt_release_button.wav", t = 1.43 },
+        { s = path .. "m3_bolt_out.wav", t = 1.52 },
+        { s = randspin, t = 1.83 },
+    }},
+    ["pa_ammo_in_first"] = { Source = {"pa_ammo_in_first_0", "pa_ammo_in_first_0", "pa_ammo_in_first_1", "pa_ammo_in_first_2"}, RestoreAmmo = 1, EventTable = { 
+        { s = path .. "m3_pump_in.wav", t = 0.06 },
+        { s = randspin, t = 0.32 },
+        { s = path .. "mr133_shell_pickup.wav", t = 0.72 },
+        { s = path .. "m3_shell_in_first.wav", t = 1.08 },
+        { s = path .. "m3_bolt_release_button.wav", t = 1.39 },
+        { s = path .. "m3_bolt_out.wav", t = 1.48 },
+        { s = randspin, t = 1.67 },
+    }},
+    ["reload_start"] = { Source = "reload_start", RestoreAmmo = 1, EventTable = {
+        { s = randspin, t = 0.03 },
+        { s = path .. "mr133_shell_pickup.wav", t = 0.46 },
+        { s = path .. "mr133_magcover.wav", t = 0.88 },
+        { s = shell_in, t = 1 },
+    }},
+    ["reload_in_loop"] = { Source = "reload_in_loop", EventTable = {
+        { s = path .. "mr133_shell_pickup.wav", t = 0.42 },
+        { s = path .. "mr133_magcover.wav", t = 0.76 },
+        { s = shell_in, t = 0.87 },
+    }},
+    ["reload_in_loop3"] = { Source = "reload_in_loop3", EventTable = {
+        { s = path .. "mr133_shell_pickup.wav", t = 0.04 },
+        { s = path .. "mr133_magcover.wav", t = 0.31 },
+        { s = shell_in, t = 0.44 },
+    }},
+    ["reload_end"] = { Source = "reload_end", EventTable = {
+        { s = randspin, t = 0.07 },
+    }},
+    ["reload_end2"] = { Source = "reload_end2", EventTable = {
+        { s = randspin, t = 0.1 },
+        { s = randspin, t = 0.38 },
+    }},
+    ["fistful_start"] = { Source = "fistful_start", EventTable = {
+        { s = randspin, t = 0.15 },
+    }},
+    ["fistful1"] = { Source = "fistful1", EventTable = {
+        -- { s = path .. "mr133_shell_pickup.wav", t = 0.05 },
+        { s = pouchout, t = 0.05 },
+        { s = randspin, t = 0.1 },
+        { s = path .. "mr133_magcover.wav", t = 0.45 },
+        { s = shell_in, t = 0.64 },
+    }},
+    ["fistful2"] = { Source = "fistful2", EventTable = {
+        { s = path .. "mr133_shell_pickup.wav", t = 0.08 },
+        { s = path .. "mr133_magcover.wav", t = 0.29 },
+        { s = shell_in, t = 0.48 },
+    }},
+    ["fistful3"] = { Source = "fistful3", EventTable = {
+        { s = path .. "mr133_shell_pickup.wav", t = 0.05 },
+        { s = path .. "mr133_magcover.wav", t = 0.21 },
+        { s = shell_in, t = 0.44 },
+    }},
+    ["fistful4"] = { Source = "fistful4", EventTable = {
+        { s = path .. "mr133_shell_pickup.wav", t = 0.04 },
+        { s = path .. "mr133_magcover.wav", t = 0.21 },
+        { s = shell_in, t = 0.39 },
+    }},
+    ["fistful5"] = { Source = "fistful5", EventTable = {
+        { s = path .. "mr133_magcover.wav", t = 0.31 },
+        { s = shell_in, t = 0.52 },
+    }},
+    ["fistful5next"] = { Source = "fistful5next", EventTable = {
+        { s = path .. "mr133_magcover.wav", t = 0.31 },
+        { s = shell_in, t = 0.52 },
+        { s = randspin, t = 0.89 },
+    }},
+    ["fistful_abort_1"] = { Source = "fistful_abort_1", EventTable = fistfualabort},
+    ["fistful_abort_2"] = { Source = "fistful_abort_2", EventTable = fistfualabort},
+    ["fistful_abort_3"] = { Source = "fistful_abort_3", EventTable = fistfualabort},
+    ["fistful_abort_4"] = { Source = "fistful_abort_4", EventTable = fistfualabort},
+    ["fistful_end"] = { Source = "fistful_end", EventTable = {
+        { s = randspin, t = 0.15 },
+    }},
 }
 
 ------------------------- [[[           Attachments            ]]] -------------------------
