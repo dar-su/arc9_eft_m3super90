@@ -150,9 +150,11 @@ SWEP.RecoilKickDamping = 10
 --          Heating
 
 SWEP.Malfunction = true 
-SWEP.MalfunctionNeverLastShoot = false 
+SWEP.MalfunctionCycle = true  
+SWEP.MalfunctionNeverLastShoot = true 
 SWEP.MalfunctionMeanShotsToFail = 1.5 * 250
-SWEP.MalfunctionMeanShotsToFailMultHot = -0.1
+SWEP.MalfunctionMeanShotsToFailMultHot = -0.2
+SWEP.MalfunctionWait = -1 -- oh god why the fuck 0 is 0.5???????
 SWEP.Overheat = true
 SWEP.HeatCapacity = 30
 SWEP.HeatDissipation = 0.5
@@ -451,7 +453,7 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
         -- if rand == 5 then swep.EFTInspectnum = 1 rand = 1 end
 
         if ARC9EFTBASE and SERVER then
-            timer.Simple(0.5, function()
+            timer.Simple(0.75, function()
                 net.Start("arc9eftjam")
                 net.WriteUInt(rand, 3)
                 net.Send(swep:GetOwner())
