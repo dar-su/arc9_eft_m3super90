@@ -13,7 +13,7 @@ SWEP.Credits = {
 
 SWEP.PrintName = "Benelli M3 Super 90"
 
-SWEP.Class = "Dual-mode shotgun"
+SWEP.Class = ARC9:GetPhrase("eft_class_weapon_dualsg")
 SWEP.Trivia = {
     [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = "Benelli Armi SpA",
     [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = "12 gauge",
