@@ -454,9 +454,11 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
 
         if ARC9EFTBASE and SERVER then
             timer.Simple(0.75, function()
-                net.Start("arc9eftjam")
-                net.WriteUInt(rand, 3)
-                net.Send(swep:GetOwner())
+                if IsValid(swep) and IsValid(swep:GetOwner()) then
+                    net.Start("arc9eftjam")
+                    net.WriteUInt(rand, 3)
+                    net.Send(swep:GetOwner())
+                end
             end)
         end
 
@@ -821,7 +823,7 @@ function SWEP:HookP_BlockFire()
         !self:GetValue("HasHG") or
         !self:GetValue("HasBarrel") or
         !self:GetValue("HasAmmoooooooo") then
-            if self.missingpartsnotifsent < CurTime() then
+            if SERVER and self.missingpartsnotifsent < CurTime() then
                 self.missingpartsnotifsent = CurTime() + 3
                 net.Start("arc9eftmissingparts")
                 net.Send(self:GetOwner())
