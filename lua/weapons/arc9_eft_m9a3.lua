@@ -108,7 +108,7 @@ SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 
 SWEP.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/mag_m9a3.mdl" -- Set to a string or table to drop this magazine when reloading.
 -- SWEP.DropMagazineSounds = {
---     "arc9_eft_shared/weap_magdrop_plastic.wav"
+--     "arc9_eft_shared/weap_magdrop_plastic.ogg"
 -- } -- Table of sounds a dropped magazine should play.
 SWEP.DropMagazineAmount = 0 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.66*0.85
@@ -202,7 +202,7 @@ SWEP.HoldBreathTime = 40
 SWEP.RestoreBreathTime = 30
 SWEP.BreathInSound = false 
 SWEP.BreathOutSound = false
-SWEP.BreathRunOutSound = "arc9_eft_shared/bear3_breath_sprint.wav"
+SWEP.BreathRunOutSound = "arc9_eft_shared/bear3_breath_sprint.ogg"
 
 SWEP.AimDownSightsTime = 0.1 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.35 -- How long it takes to go from sprinting to being able to fire.
@@ -307,25 +307,25 @@ SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
 
 local path = "weapons/darsu_eft/m9a3/"
 
-SWEP.ShootSound = { path .. "m9a3_fire_close.wav" }
-SWEP.ShootSoundIndoor = path .. "m9a3_fire_indoor_close.wav"
-SWEP.DistantShootSound = { path .. "m9a3_fire_distant.wav" }
-SWEP.DistantShootSoundIndoor = path .. "m9a3_fire_indoor_distant.wav"
+SWEP.ShootSound = { path .. "m9a3_fire_close.ogg" }
+SWEP.ShootSoundIndoor = path .. "m9a3_fire_indoor_close.ogg"
+SWEP.DistantShootSound = { path .. "m9a3_fire_distant.ogg" }
+SWEP.DistantShootSoundIndoor = path .. "m9a3_fire_indoor_distant.ogg"
 
-SWEP.ShootSoundSilenced = { path .. "m9a3_fire_close_silenced.wav" }
-SWEP.ShootSoundSilencedIndoor = path .. "m9a3_fire_distant_silenced.wav"
-SWEP.DistantShootSoundSilenced = path .. "m9a3_fire_distant_silenced.wav"
-SWEP.DistantShootSoundSilencedIndoor = path .. "m9a3_fire_distant_indoor_silenced.wav"
+SWEP.ShootSoundSilenced = { path .. "m9a3_fire_close_silenced.ogg" }
+SWEP.ShootSoundSilencedIndoor = path .. "m9a3_fire_distant_silenced.ogg"
+SWEP.DistantShootSoundSilenced = path .. "m9a3_fire_distant_silenced.ogg"
+SWEP.DistantShootSoundSilencedIndoor = path .. "m9a3_fire_distant_indoor_silenced.ogg"
 
 SWEP.FiremodeSound = "" -- we will have own in sound tables
 SWEP.ToggleAttSound = ""-- we will have own in sound tables
 
-SWEP.DryFireSound = "arc9_eft_shared/weap_trigger_empty.wav"
+SWEP.DryFireSound = "arc9_eft_shared/weap_trigger_empty.ogg"
 
 SWEP.SuppressEmptySuffix = true 
 
-SWEP.EnterSightsSound = "arc9_eft_shared/weap_in.wav"
-SWEP.ExitSightsSound = "arc9_eft_shared/weap_handoff.wav"
+SWEP.EnterSightsSound = "arc9_eft_shared/weap_in.ogg"
+SWEP.ExitSightsSound = "arc9_eft_shared/weap_handoff.ogg"
 
 SWEP.Hook_TranslateAnimation = function(swep, anim)
     local elements = swep:GetElements()
@@ -389,45 +389,45 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
     -- print("nomag:", nomag, "rand:", rand, "anim:", anim, "ending:", ending)
 end
 
-local randspin = {"arc9_eft_shared/weapon_generic_rifle_spin1.wav","arc9_eft_shared/weapon_generic_rifle_spin2.wav","arc9_eft_shared/weapon_generic_rifle_spin3.wav","arc9_eft_shared/weapon_generic_rifle_spin4.wav","arc9_eft_shared/weapon_generic_rifle_spin5.wav","arc9_eft_shared/weapon_generic_rifle_spin6.wav","arc9_eft_shared/weapon_generic_rifle_spin7.wav","arc9_eft_shared/weapon_generic_rifle_spin8.wav","arc9_eft_shared/weapon_generic_rifle_spin9.wav","arc9_eft_shared/weapon_generic_rifle_spin10.wav"}
-local slidelock = {"arc9_eft_shared/pistol_jam_slidelock_try1.wav", "arc9_eft_shared/pistol_jam_slidelock_try2.wav", "arc9_eft_shared/pistol_jam_slidelock_try3.wav"}
-local slidelockgrab = {"arc9_eft_shared/pistol_jam_slidelock_grab1.wav", "arc9_eft_shared/pistol_jam_slidelock_grab2.wav", "arc9_eft_shared/pistol_jam_slidelock_grab3.wav"}
-local pouchin = {"arc9_eft_shared/generic_mag_pouch_in1.wav","arc9_eft_shared/generic_mag_pouch_in2.wav","arc9_eft_shared/generic_mag_pouch_in3.wav","arc9_eft_shared/generic_mag_pouch_in4.wav","arc9_eft_shared/generic_mag_pouch_in5.wav","arc9_eft_shared/generic_mag_pouch_in6.wav","arc9_eft_shared/generic_mag_pouch_in7.wav"}
-local pouchout = {"arc9_eft_shared/generic_mag_pouch_out1.wav","arc9_eft_shared/generic_mag_pouch_out2.wav","arc9_eft_shared/generic_mag_pouch_out3.wav","arc9_eft_shared/generic_mag_pouch_out4.wav","arc9_eft_shared/generic_mag_pouch_out5.wav","arc9_eft_shared/generic_mag_pouch_out6.wav","arc9_eft_shared/generic_mag_pouch_out7.wav"}
+local randspin = {"arc9_eft_shared/weapon_generic_rifle_spin1.ogg","arc9_eft_shared/weapon_generic_rifle_spin2.ogg","arc9_eft_shared/weapon_generic_rifle_spin3.ogg","arc9_eft_shared/weapon_generic_rifle_spin4.ogg","arc9_eft_shared/weapon_generic_rifle_spin5.ogg","arc9_eft_shared/weapon_generic_rifle_spin6.ogg","arc9_eft_shared/weapon_generic_rifle_spin7.ogg","arc9_eft_shared/weapon_generic_rifle_spin8.ogg","arc9_eft_shared/weapon_generic_rifle_spin9.ogg","arc9_eft_shared/weapon_generic_rifle_spin10.ogg"}
+local slidelock = {"arc9_eft_shared/pistol_jam_slidelock_try1.ogg", "arc9_eft_shared/pistol_jam_slidelock_try2.ogg", "arc9_eft_shared/pistol_jam_slidelock_try3.ogg"}
+local slidelockgrab = {"arc9_eft_shared/pistol_jam_slidelock_grab1.ogg", "arc9_eft_shared/pistol_jam_slidelock_grab2.ogg", "arc9_eft_shared/pistol_jam_slidelock_grab3.ogg"}
+local pouchin = {"arc9_eft_shared/generic_mag_pouch_in1.ogg","arc9_eft_shared/generic_mag_pouch_in2.ogg","arc9_eft_shared/generic_mag_pouch_in3.ogg","arc9_eft_shared/generic_mag_pouch_in4.ogg","arc9_eft_shared/generic_mag_pouch_in5.ogg","arc9_eft_shared/generic_mag_pouch_in6.ogg","arc9_eft_shared/generic_mag_pouch_in7.ogg"}
+local pouchout = {"arc9_eft_shared/generic_mag_pouch_out1.ogg","arc9_eft_shared/generic_mag_pouch_out2.ogg","arc9_eft_shared/generic_mag_pouch_out3.ogg","arc9_eft_shared/generic_mag_pouch_out4.ogg","arc9_eft_shared/generic_mag_pouch_out5.ogg","arc9_eft_shared/generic_mag_pouch_out6.ogg","arc9_eft_shared/generic_mag_pouch_out7.ogg"}
 
 local rst_single = {
     { s = randspin, t = 0.05 },
     { s = randspin, t = 0.4 },
-    { s = path .. "grach_slider_in.wav", t = 0.75 },
-    { s = "arc9_eft_shared/weap_round_pullout.wav", t = 1.1},
+    { s = path .. "grach_slider_in.ogg", t = 0.75 },
+    { s = "arc9_eft_shared/weap_round_pullout.ogg", t = 1.1},
     { s = randspin, t = 1.53 },
-    { s =  path .. "generic_jam_shell_ remove_medium3.wav", t = 1.82  },
+    { s =  path .. "generic_jam_shell_ remove_medium3.ogg", t = 1.82  },
     { s = randspin, t = 2.25 },
-    { s =  path .. "pm_catch_slider.wav", t = 2.75 },
+    { s =  path .. "pm_catch_slider.ogg", t = 2.75 },
     { s = randspin, t = 3.08 },
 }
 
 local rst_def = {
     { s = randspin, t = 0.1 },
-    { s =  path .. "kedr_fireselector_up.wav", t = 0.46 }, -- eft devs redarded
-    { s =  path .. "mpx_weap_magout_plastic.wav", t = 0.55 },
+    { s =  path .. "kedr_fireselector_up.ogg", t = 0.46 }, -- eft devs redarded
+    { s =  path .. "mpx_weap_magout_plastic.ogg", t = 0.55 },
     { s = pouchin, t = 1.2 },
     { s = pouchout, t = 1.6 },
     { s = randspin, t = 1.7 },
-    { s =  path .. "mpx_weap_magin_plastic.wav", t = 2.35 },
+    { s =  path .. "mpx_weap_magin_plastic.ogg", t = 2.35 },
     { s = randspin, t = 3.12 },
 }
 
 local rst_empty = {
     { s = randspin, t = 0.1 },    
-    { s =  path .. "kedr_fireselector_up.wav", t = 0.35 }, -- eft devs redarded
-    { s =  path .. "mpx_weap_magout_plastic.wav", t = 0.5 },
+    { s =  path .. "kedr_fireselector_up.ogg", t = 0.35 }, -- eft devs redarded
+    { s =  path .. "mpx_weap_magout_plastic.ogg", t = 0.5 },
     { s =  randspin, t = 0.53 },
     { s =  randspin, t = 1.04 },
     { s = pouchout, t = 1.15 },
-    { s =  path .. "mpx_weap_magin_plastic.wav", t = 1.69 },
+    { s =  path .. "mpx_weap_magin_plastic.ogg", t = 1.69 },
     { s = randspin, t = 2.24 },  
-    { s =  path .. "pm_catch_slider.wav", t = 2.67 },
+    { s =  path .. "pm_catch_slider.ogg", t = 2.67 },
     { s = randspin, t = 2.95 },
     {hide = 0, t = 0},
     {hide = 1, t = 0.66},
@@ -436,11 +436,11 @@ local rst_empty = {
 
 local rst_magcheck = {
     { s = randspin, t = 0.1 },
-    { s =  path .. "kedr_fireselector_up.wav", t = 0.23},
-    { s =  path .. "mpx_weap_magout_plastic.wav", t = 0.33 },
+    { s =  path .. "kedr_fireselector_up.ogg", t = 0.23},
+    { s =  path .. "mpx_weap_magout_plastic.ogg", t = 0.33 },
     { s = randspin, t = 0.48 },
     { s = randspin, t = 0.98 },
-    { s =  path .. "mpx_weap_magin_plastic.wav", t = 2.91 },
+    { s =  path .. "mpx_weap_magin_plastic.ogg", t = 2.91 },
     { s = randspin, t = 3.38 },
 }
 
@@ -453,47 +453,47 @@ SWEP.Animations = {
     ["ready"] = {
         Source = {"ready0", "ready1", "ready2"},
         EventTable = {
-            { s = "arc9_eft_shared/pm_draw.wav", t = 0.05 },
-            { s = path .. "grach_slider_in.wav", t = 0.58 },
-            { s = path .. "pm_slider_out.wav", t = 0.75 },
+            { s = "arc9_eft_shared/pm_draw.ogg", t = 0.05 },
+            { s = path .. "grach_slider_in.ogg", t = 0.58 },
+            { s = path .. "pm_slider_out.ogg", t = 0.75 },
         },
     },
 
     ["draw"] = {
         Source = "draw",
         EventTable = {
-            { s = "arc9_eft_shared/pm_draw.wav", t = 0.05 },
+            { s = "arc9_eft_shared/pm_draw.ogg", t = 0.05 },
         }
     },
     ["draw_empty"] = {
         Source = "draw_empty",
         EventTable = {
-            { s = "arc9_eft_shared/pm_draw.wav", t = 0.05 },
+            { s = "arc9_eft_shared/pm_draw.ogg", t = 0.05 },
         }
     },
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            { s =  "arc9_eft_shared/pm_holster.wav", t = 0 },
+            { s =  "arc9_eft_shared/pm_holster.ogg", t = 0 },
         }
     },
     ["holster_empty"] = {
         Source = "holster_empty",
         EventTable = {
-            { s =  "arc9_eft_shared/pm_holster.wav", t = 0 },
+            { s =  "arc9_eft_shared/pm_holster.ogg", t = 0 },
         }
     },
 
     ["fire"] = {
         Source = "fire",
         EventTable = {
-            { s = path .. "pm_trigger_hammer.wav", t = 0 },
+            { s = path .. "pm_trigger_hammer.ogg", t = 0 },
         }
     },
     ["fire_empty"] = {
         Source = "fire_last",
         EventTable = {
-            { s = path .. "pm_catch_slider.wav", t = 0.05 },
+            { s = path .. "pm_catch_slider.ogg", t = 0.05 },
         }
     },
     ["dryfire"] = {
@@ -528,19 +528,19 @@ SWEP.Animations = {
 
     ["toggle"] = {
         Source = "mod_switch",
-        EventTable = {{ s = {"arc9_eft_shared/weapon_light_switcher1.wav", "arc9_eft_shared/weapon_light_switcher2.wav", "arc9_eft_shared/weapon_light_switcher3.wav"}, t = 0 },}
+        EventTable = {{ s = {"arc9_eft_shared/weapon_light_switcher1.ogg", "arc9_eft_shared/weapon_light_switcher2.ogg", "arc9_eft_shared/weapon_light_switcher3.ogg"}, t = 0 },}
     },
     ["switchsights"] = {
         Source = "mod_switch",
-        EventTable = {{ s = {"arc9_eft_shared/weapon_light_switcher1.wav", "arc9_eft_shared/weapon_light_switcher2.wav", "arc9_eft_shared/weapon_light_switcher3.wav"}, t = 0 },}
+        EventTable = {{ s = {"arc9_eft_shared/weapon_light_switcher1.ogg", "arc9_eft_shared/weapon_light_switcher2.ogg", "arc9_eft_shared/weapon_light_switcher3.ogg"}, t = 0 },}
     },
     ["toggle_empty"] = {
         Source = "mod_switch_empty",
-        EventTable = {{ s = {"arc9_eft_shared/weapon_light_switcher1.wav", "arc9_eft_shared/weapon_light_switcher2.wav", "arc9_eft_shared/weapon_light_switcher3.wav"}, t = 0 },}
+        EventTable = {{ s = {"arc9_eft_shared/weapon_light_switcher1.ogg", "arc9_eft_shared/weapon_light_switcher2.ogg", "arc9_eft_shared/weapon_light_switcher3.ogg"}, t = 0 },}
     },
     ["switchsights_empty"] = {
         Source = "mod_switch_empty",
-        EventTable = {{ s = {"arc9_eft_shared/weapon_light_switcher1.wav", "arc9_eft_shared/weapon_light_switcher2.wav", "arc9_eft_shared/weapon_light_switcher3.wav"}, t = 0 },}
+        EventTable = {{ s = {"arc9_eft_shared/weapon_light_switcher1.ogg", "arc9_eft_shared/weapon_light_switcher2.ogg", "arc9_eft_shared/weapon_light_switcher3.ogg"}, t = 0 },}
     },
 
 
@@ -555,8 +555,8 @@ SWEP.Animations = {
             { s = slidelockgrab, t = 1.67 },
             { s = slidelockgrab, t = 2.07 },
             { s = randspin, t = 2.13 },
-            { s = "arc9_eft_shared/weap_round_out.wav", t = 2.18 },
-            { s =  path .. "pm_slider_out.wav", t = 2.38 },
+            { s = "arc9_eft_shared/weap_round_out.ogg", t = 2.18 },
+            { s =  path .. "pm_slider_out.ogg", t = 2.38 },
             { s = randspin, t = 2.7 },
         },
         -- EjectAt = 1.97
@@ -573,9 +573,9 @@ SWEP.Animations = {
             { s = slidelockgrab, t = 1.89 },
             { s = randspin, t = 2.55 },
             { s = slidelockgrab, t = 3.03 },
-            { s =  path .. "pm_slider_out.wav", t = 3.72 },
-            { s = "arc9_eft_shared/weap_round_out.wav", t = 3.8 },
-            { s =  path .. "grach_slider_in.wav", t = 4.03 },
+            { s =  path .. "pm_slider_out.ogg", t = 3.72 },
+            { s = "arc9_eft_shared/weap_round_out.ogg", t = 3.8 },
+            { s =  path .. "grach_slider_in.ogg", t = 4.03 },
             { s = randspin, t = 4.46 },
         },
         EjectAt = 3.8
@@ -589,9 +589,9 @@ SWEP.Animations = {
             { s = randspin, t = 1.07 },
             { s = slidelockgrab, t = 1.57 },
             { s = slidelockgrab, t = 2.05 },
-            { s =  path .. "pm_slider_out.wav", t = 2.48 },
-            { s = "arc9_eft_shared/weap_round_out.wav", t = 2.51 },
-            { s =  path .. "grach_slider_in.wav", t = 2.79 },
+            { s =  path .. "pm_slider_out.ogg", t = 2.48 },
+            { s = "arc9_eft_shared/weap_round_out.ogg", t = 2.51 },
+            { s =  path .. "grach_slider_in.ogg", t = 2.79 },
             { s = randspin, t = 3.24 },
         },
         -- EjectAt = 2.52
@@ -607,9 +607,9 @@ SWEP.Animations = {
             { s = slidelockgrab, t = 1.61 },
             { s = randspin, t = 2.28 },
             { s = slidelockgrab, t = 2.8 },
-            { s =  path .. "pm_slider_out.wav", t = 3.17 },
-            { s = "arc9_eft_shared/weap_round_out.wav", t = 3.24 },
-            { s =  path .. "grach_slider_in.wav", t = 3.61 },
+            { s =  path .. "pm_slider_out.ogg", t = 3.17 },
+            { s = "arc9_eft_shared/weap_round_out.ogg", t = 3.24 },
+            { s =  path .. "grach_slider_in.ogg", t = 3.61 },
             { s = randspin, t = 4 },
         },
         EjectAt = 3.24
@@ -653,8 +653,8 @@ SWEP.Animations = {
         Source = "checkchamber",
         EventTable = {
             { s = randspin, t = 0.1 },
-            { s = path .. "grach_slider_in.wav", t = 0.56 },
-            { s = path .. "pm_slider_out.wav", t = 1.16 },
+            { s = path .. "grach_slider_in.ogg", t = 0.56 },
+            { s = path .. "pm_slider_out.ogg", t = 1.16 },
             { s = randspin, t = 1.38 },
         }
     },

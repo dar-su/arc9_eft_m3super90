@@ -202,7 +202,7 @@ SWEP.HoldBreathTime = 40
 SWEP.RestoreBreathTime = 30
 SWEP.BreathInSound = false 
 SWEP.BreathOutSound = false
-SWEP.BreathRunOutSound = "arc9_eft_shared/bear3_breath_sprint.wav"
+SWEP.BreathRunOutSound = "arc9_eft_shared/bear3_breath_sprint.ogg"
 
 --          Generic stats
 
@@ -309,23 +309,23 @@ SWEP.ShootPitchVariation = 0
 SWEP.DistantShootVolume = 0.05
 SWEP.DistantShootVolumeActual = 0.05
 
-SWEP.ShootSound = path .. "m3_fire_outdoor_close.wav"
-SWEP.ShootSoundIndoor = path .. "m3_fire_indoor_close.wav"
-SWEP.DistantShootSound = path .. "m3_fire_outdoor_distant.wav"
-SWEP.DistantShootSoundIndoor = path .. "m3_fire_indoor_distant.wav"
+SWEP.ShootSound = path .. "m3_fire_outdoor_close.ogg"
+SWEP.ShootSoundIndoor = path .. "m3_fire_indoor_close.ogg"
+SWEP.DistantShootSound = path .. "m3_fire_outdoor_distant.ogg"
+SWEP.DistantShootSoundIndoor = path .. "m3_fire_indoor_distant.ogg"
 
-SWEP.ShootSoundSilenced = path .. "m3_fire_outdoor_silenced_close.wav"
-SWEP.ShootSoundSilencedIndoor = path .. "m3_fire_indoor_silenced_close.wav"
-SWEP.DistantShootSoundSilenced = path .. "m3_fire_outdoor_silenced_distant.wav"
-SWEP.DistantShootSoundSilencedIndoor = path .. "m3_fire_indoor_silenced_distant.wav"
+SWEP.ShootSoundSilenced = path .. "m3_fire_outdoor_silenced_close.ogg"
+SWEP.ShootSoundSilencedIndoor = path .. "m3_fire_indoor_silenced_close.ogg"
+SWEP.DistantShootSoundSilenced = path .. "m3_fire_outdoor_silenced_distant.ogg"
+SWEP.DistantShootSoundSilencedIndoor = path .. "m3_fire_indoor_silenced_distant.ogg"
 
 SWEP.FiremodeSound = "" -- we will have own in sound tables
 SWEP.ToggleAttSound = "" -- we will have own in sound tables
 SWEP.DryFireSound = "" -- we will have own in sound tables
 
 
-SWEP.EnterSightsSound = "arc9_eft_shared/weap_in.wav"
-SWEP.ExitSightsSound = "arc9_eft_shared/weap_handoff.wav"
+SWEP.EnterSightsSound = "arc9_eft_shared/weap_in.ogg"
+SWEP.ExitSightsSound = "arc9_eft_shared/weap_handoff.ogg"
 
 
 
@@ -469,28 +469,28 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
 end
 
 
-local randspin = {"arc9_eft_shared/weapon_generic_rifle_spin1.wav","arc9_eft_shared/weapon_generic_rifle_spin2.wav","arc9_eft_shared/weapon_generic_rifle_spin3.wav","arc9_eft_shared/weapon_generic_rifle_spin4.wav","arc9_eft_shared/weapon_generic_rifle_spin5.wav","arc9_eft_shared/weapon_generic_rifle_spin6.wav","arc9_eft_shared/weapon_generic_rifle_spin7.wav","arc9_eft_shared/weapon_generic_rifle_spin8.wav","arc9_eft_shared/weapon_generic_rifle_spin9.wav","arc9_eft_shared/weapon_generic_rifle_spin10.wav"}
-local pouchin = {"arc9_eft_shared/generic_mag_pouch_in1.wav","arc9_eft_shared/generic_mag_pouch_in2.wav","arc9_eft_shared/generic_mag_pouch_in3.wav","arc9_eft_shared/generic_mag_pouch_in4.wav","arc9_eft_shared/generic_mag_pouch_in5.wav","arc9_eft_shared/generic_mag_pouch_in6.wav","arc9_eft_shared/generic_mag_pouch_in7.wav"}
-local pouchout = {"arc9_eft_shared/generic_mag_pouch_out1.wav","arc9_eft_shared/generic_mag_pouch_out2.wav","arc9_eft_shared/generic_mag_pouch_out3.wav","arc9_eft_shared/generic_mag_pouch_out4.wav","arc9_eft_shared/generic_mag_pouch_out5.wav","arc9_eft_shared/generic_mag_pouch_out6.wav","arc9_eft_shared/generic_mag_pouch_out7.wav"}
-local switchi = { { s = {"arc9_eft_shared/weapon_light_switcher1.wav", "arc9_eft_shared/weapon_light_switcher2.wav", "arc9_eft_shared/weapon_light_switcher3.wav"}, t = 0 } }
-local shell_in = {path .. "m3_shell_in1.wav", path .. "m3_shell_in2.wav", path .. "m3_shell_in3.wav"}
+local randspin = {"arc9_eft_shared/weapon_generic_rifle_spin1.ogg","arc9_eft_shared/weapon_generic_rifle_spin2.ogg","arc9_eft_shared/weapon_generic_rifle_spin3.ogg","arc9_eft_shared/weapon_generic_rifle_spin4.ogg","arc9_eft_shared/weapon_generic_rifle_spin5.ogg","arc9_eft_shared/weapon_generic_rifle_spin6.ogg","arc9_eft_shared/weapon_generic_rifle_spin7.ogg","arc9_eft_shared/weapon_generic_rifle_spin8.ogg","arc9_eft_shared/weapon_generic_rifle_spin9.ogg","arc9_eft_shared/weapon_generic_rifle_spin10.ogg"}
+local pouchin = {"arc9_eft_shared/generic_mag_pouch_in1.ogg","arc9_eft_shared/generic_mag_pouch_in2.ogg","arc9_eft_shared/generic_mag_pouch_in3.ogg","arc9_eft_shared/generic_mag_pouch_in4.ogg","arc9_eft_shared/generic_mag_pouch_in5.ogg","arc9_eft_shared/generic_mag_pouch_in6.ogg","arc9_eft_shared/generic_mag_pouch_in7.ogg"}
+local pouchout = {"arc9_eft_shared/generic_mag_pouch_out1.ogg","arc9_eft_shared/generic_mag_pouch_out2.ogg","arc9_eft_shared/generic_mag_pouch_out3.ogg","arc9_eft_shared/generic_mag_pouch_out4.ogg","arc9_eft_shared/generic_mag_pouch_out5.ogg","arc9_eft_shared/generic_mag_pouch_out6.ogg","arc9_eft_shared/generic_mag_pouch_out7.ogg"}
+local switchi = { { s = {"arc9_eft_shared/weapon_light_switcher1.ogg", "arc9_eft_shared/weapon_light_switcher2.ogg", "arc9_eft_shared/weapon_light_switcher3.ogg"}, t = 0 } }
+local shell_in = {path .. "m3_shell_in1.ogg", path .. "m3_shell_in2.ogg", path .. "m3_shell_in3.ogg"}
 
 local readypa = {
     { s = randspin, t = 0 },
-    { s = path .. "m3_pump_in.wav", t = 0.56 },
-    { s = path .. "m3_pump_out.wav", t = 0.73 },
+    { s = path .. "m3_pump_in.ogg", t = 0.56 },
+    { s = path .. "m3_pump_out.ogg", t = 0.73 },
     { s = randspin, t = 0.99 },
 }
 local readysa = {
     { s = randspin, t = 0 },
-    { s = path .. "m3_bolt_in.wav", t = 0.52 },
-    { s = path .. "m3_bolt_out.wav", t = 0.72 },
+    { s = path .. "m3_bolt_in.ogg", t = 0.52 },
+    { s = path .. "m3_bolt_out.ogg", t = 0.72 },
     { s = randspin, t = 0.81 },
 }
 
 local cycle = {
-    { s = path .. "m3_pump_in.wav", t = 0.01 },
-    { s = path .. "m3_pump_out.wav", t = 0.25 },
+    { s = path .. "m3_pump_in.ogg", t = 0.01 },
+    { s = path .. "m3_pump_out.ogg", t = 0.25 },
 }
 
 local look = {
@@ -501,21 +501,21 @@ local look = {
 
 local magcheck = {
     { s = randspin, t = 0.1 },
-    { s = path .. "mr133_magcover.wav", t = 0.36 },
-    { s = path .. "mr133_magcover.wav", t = 0.92 },
+    { s = path .. "mr133_magcover.ogg", t = 0.36 },
+    { s = path .. "mr133_magcover.ogg", t = 0.92 },
     { s = randspin, t = 1.09 },
 }
 
 local checkchamber_pa = {
     { s = randspin, t = 0.05 },
-    { s = path .. "m3_pump_in_check.wav", t = 0.34 },
-    { s = path .. "m3_pump_out_check.wav", t = 1.19 },
+    { s = path .. "m3_pump_in_check.ogg", t = 0.34 },
+    { s = path .. "m3_pump_out_check.ogg", t = 1.19 },
     { s = randspin, t = 1.36 },
 }
 local checkchamber_sa = {
     { s = randspin, t = 0.05 },
-    { s = path .. "m3_bolt_in_check.wav", t = 0.72 },
-    { s = path .. "m3_bolt_out_check.wav", t = 1.24 },
+    { s = path .. "m3_bolt_in_check.ogg", t = 0.72 },
+    { s = path .. "m3_bolt_out_check.ogg", t = 1.24 },
     { s = randspin, t = 1.45 },
 }
 local checkchamber_sa_empty = {
@@ -528,8 +528,8 @@ local fistfualabort = {
     { s = randspin, t = 0.87 },
 }
 
-local drawa = { { s = path .. "mr133_draw.wav", t = 0 } }
-local holstera = { { s = path .. "mr133_holster.wav", t = 0 } }
+local drawa = { { s = path .. "mr133_draw.ogg", t = 0 } }
+local holstera = { { s = path .. "mr133_holster.ogg", t = 0 } }
 
 SWEP.Animations = {
     ["idle"] = { Source = "idle", Time = 1111 }, -- remove TIME !!!!!!
@@ -543,12 +543,12 @@ SWEP.Animations = {
     ["draw_empty"] = { Source = "draw_empty", EventTable = drawa },
     ["holster_empty"] = { Source = "holster_empty", EventTable = holstera },
 
-    ["fire_sa"] = { Source = "fire", EventTable = { { s = path .. "m3_hammer_release.wav", t = 0 } } },
-    ["fire"] = { Source = "fire_sa", EventTable = { { s = path .. "m3_hammer_release.wav", t = 0 } }, NoIdle = true },
-    ["fire_empty"] = { Source = "fire_salast", EventTable = { { s = path .. "m3_hammer_release.wav", t = 0 } }, NoIdle = true },
+    ["fire_sa"] = { Source = "fire", EventTable = { { s = path .. "m3_hammer_release.ogg", t = 0 } } },
+    ["fire"] = { Source = "fire_sa", EventTable = { { s = path .. "m3_hammer_release.ogg", t = 0 } }, NoIdle = true },
+    ["fire_empty"] = { Source = "fire_salast", EventTable = { { s = path .. "m3_hammer_release.ogg", t = 0 } }, NoIdle = true },
 
-    ["dryfire"] = { Source = "dryfire", EventTable = { { s = path .. "pm_trigger_empty.wav", t = 0 } } },
-    ["dryfire_empty"] = { Source = "dryfire_empty", EventTable = { { s = path .. "pm_trigger_empty.wav", t = 0 } } },
+    ["dryfire"] = { Source = "dryfire", EventTable = { { s = path .. "pm_trigger_empty.ogg", t = 0 } } },
+    ["dryfire_empty"] = { Source = "dryfire_empty", EventTable = { { s = path .. "pm_trigger_empty.ogg", t = 0 } } },
 
     ["cycle"] = { Source = {"pump0","pump1","pump2"}, EventTable = cycle, Mult = 0.8 },
     -- ["cycle"] = { Source = "pumpfast", EventTable = cycle, Mult = 1 },
@@ -569,43 +569,43 @@ SWEP.Animations = {
     ["toggle_empty"] = {        Source = "mod_switch_empty", EventTable = switchi },
     ["switchsights_empty"] = {  Source = "mod_switch_empty", EventTable = switchi },
 
-    ["firemode_1"] = { Source = "sa_to_pa", EventTable = { { s = path .. "m3_switch_to_pa.wav", t = 0.22 } } },
-    ["firemode_2"] = { Source = "pa_to_sa", EventTable = { { s = path .. "m3_switch_to_sa.wav", t = 0.22 } } },
+    ["firemode_1"] = { Source = "sa_to_pa", EventTable = { { s = path .. "m3_switch_to_pa.ogg", t = 0.22 } } },
+    ["firemode_2"] = { Source = "pa_to_sa", EventTable = { { s = path .. "m3_switch_to_sa.ogg", t = 0.22 } } },
     ["firemode_1_empty"] = { Source = "sa_to_pa_empty", EventTable = cock }, -- disallow swtiching firemodes while empty !! ! 
     ["firemode_2_empty"] = { Source = "pa_to_sa_empty", EventTable = cock },
 
     
     ["sa_ammo_in_first_catch"] = { Source = "sa_ammo_in_first_catch", RestoreAmmo = 1, Mult = 0.85, EventTable = { 
         { s = randspin, t = 0.1 },
-        { s = path .. "mr133_shell_pickup.wav", t = 0.64 },
-        { s = path .. "m3_shell_in_first.wav", t = 1.02 },
-        { s = path .. "m3_bolt_release_button.wav", t = 1.43 },
-        { s = path .. "m3_bolt_out.wav", t = 1.52 },
+        { s = path .. "mr133_shell_pickup.ogg", t = 0.64 },
+        { s = path .. "m3_shell_in_first.ogg", t = 1.02 },
+        { s = path .. "m3_bolt_release_button.ogg", t = 1.43 },
+        { s = path .. "m3_bolt_out.ogg", t = 1.52 },
         { s = randspin, t = 1.83 },
     }},
     ["pa_ammo_in_first"] = { Source = {"pa_ammo_in_first_0", "pa_ammo_in_first_0", "pa_ammo_in_first_1", "pa_ammo_in_first_2"}, Mult = 0.85, RestoreAmmo = 1, EventTable = { 
-        { s = path .. "m3_pump_in.wav", t = 0.06 },
+        { s = path .. "m3_pump_in.ogg", t = 0.06 },
         { s = randspin, t = 0.32 },
-        { s = path .. "mr133_shell_pickup.wav", t = 0.72 },
-        { s = path .. "m3_shell_in_first.wav", t = 1.08 },
-        { s = path .. "m3_bolt_release_button.wav", t = 1.39 },
-        { s = path .. "m3_bolt_out.wav", t = 1.48 },
+        { s = path .. "mr133_shell_pickup.ogg", t = 0.72 },
+        { s = path .. "m3_shell_in_first.ogg", t = 1.08 },
+        { s = path .. "m3_bolt_release_button.ogg", t = 1.39 },
+        { s = path .. "m3_bolt_out.ogg", t = 1.48 },
         { s = randspin, t = 1.67 },
     }},
     ["reload_start"] = { Source = "reload_start", RestoreAmmo = 1, Mult = 0.9, EventTable = {
         { s = randspin, t = 0.03 },
-        { s = path .. "mr133_shell_pickup.wav", t = 0.46 },
-        { s = path .. "mr133_magcover.wav", t = 0.88 },
+        { s = path .. "mr133_shell_pickup.ogg", t = 0.46 },
+        { s = path .. "mr133_magcover.ogg", t = 0.88 },
         { s = shell_in, t = 1 },
     }},
     ["reload_in_loop"] = { Source = "reload_in_loop", Mult = 0.9, EventTable = {
-        { s = path .. "mr133_shell_pickup.wav", t = 0.42 },
-        { s = path .. "mr133_magcover.wav", t = 0.76 },
+        { s = path .. "mr133_shell_pickup.ogg", t = 0.42 },
+        { s = path .. "mr133_magcover.ogg", t = 0.76 },
         { s = shell_in, t = 0.87 },
     }},
     ["reload_in_loop3"] = { Source = "reload_in_loop3", Mult = 0.9, EventTable = {
-        { s = path .. "mr133_shell_pickup.wav", t = 0.04 },
-        { s = path .. "mr133_magcover.wav", t = 0.31 },
+        { s = path .. "mr133_shell_pickup.ogg", t = 0.04 },
+        { s = path .. "mr133_magcover.ogg", t = 0.31 },
         { s = shell_in, t = 0.44 },
     }},
     ["reload_end"] = { Source = "reload_end", Mult = 0.9, EventTable = {
@@ -619,33 +619,33 @@ SWEP.Animations = {
         { s = randspin, t = 0.15 },
     }},
     ["fistful1"] = { Source = "fistful1", Mult = 0.9, EventTable = {
-        -- { s = path .. "mr133_shell_pickup.wav", t = 0.05 },
+        -- { s = path .. "mr133_shell_pickup.ogg", t = 0.05 },
         { s = pouchout, t = 0.05 },
         { s = randspin, t = 0.1 },
-        { s = path .. "mr133_magcover.wav", t = 0.45 },
+        { s = path .. "mr133_magcover.ogg", t = 0.45 },
         { s = shell_in, t = 0.64 },
     }},
     ["fistful2"] = { Source = "fistful2", Mult = 0.9, EventTable = {
-        { s = path .. "mr133_shell_pickup.wav", t = 0.08 },
-        { s = path .. "mr133_magcover.wav", t = 0.29 },
+        { s = path .. "mr133_shell_pickup.ogg", t = 0.08 },
+        { s = path .. "mr133_magcover.ogg", t = 0.29 },
         { s = shell_in, t = 0.48 },
     }},
     ["fistful3"] = { Source = "fistful3", Mult = 0.9, EventTable = {
-        { s = path .. "mr133_shell_pickup.wav", t = 0.05 },
-        { s = path .. "mr133_magcover.wav", t = 0.21 },
+        { s = path .. "mr133_shell_pickup.ogg", t = 0.05 },
+        { s = path .. "mr133_magcover.ogg", t = 0.21 },
         { s = shell_in, t = 0.44 },
     }},
     ["fistful4"] = { Source = "fistful4", Mult = 0.9, EventTable = {
-        { s = path .. "mr133_shell_pickup.wav", t = 0.04 },
-        { s = path .. "mr133_magcover.wav", t = 0.21 },
+        { s = path .. "mr133_shell_pickup.ogg", t = 0.04 },
+        { s = path .. "mr133_magcover.ogg", t = 0.21 },
         { s = shell_in, t = 0.39 },
     }},
     ["fistful5"] = { Source = "fistful5", Mult = 0.9, EventTable = {
-        { s = path .. "mr133_magcover.wav", t = 0.31 },
+        { s = path .. "mr133_magcover.ogg", t = 0.31 },
         { s = shell_in, t = 0.52 },
     }},
     ["fistful5next"] = { Source = "fistful5next", Mult = 0.9, EventTable = {
-        { s = path .. "mr133_magcover.wav", t = 0.31 },
+        { s = path .. "mr133_magcover.ogg", t = 0.31 },
         { s = shell_in, t = 0.52 },
         { s = randspin, t = 0.89 },
     }},
@@ -664,11 +664,11 @@ SWEP.Animations = {
             { s = randspin, t = 0.1 },
             { s = randspin, t = 0.83 },
             { s = randspin, t = 1.22 },
-            { s = path .. "mr133_shell_pickup.wav", t = 1.64 },
-            { s = path .. "pump_jam_shell_out1.wav", t = 2.29},
+            { s = path .. "mr133_shell_pickup.ogg", t = 1.64 },
+            { s = path .. "pump_jam_shell_out1.ogg", t = 2.29},
             { s = randspin, t = 2.61 },
-            { s = path .. "m3_bolt_in_check.wav", t = 2.98 },
-            { s = path .. "m3_bolt_out.wav", t = 3.36 },
+            { s = path .. "m3_bolt_in_check.ogg", t = 2.98 },
+            { s = path .. "m3_bolt_out.ogg", t = 3.36 },
             { s = randspin, t = 3.6 },
         },
     },
@@ -678,18 +678,18 @@ SWEP.Animations = {
             { s = randspin, t = 0.1 },
             { s = randspin, t = 0.83 },
             { s = randspin, t = 1.27 },
-            { s = path .. "pump_jam_slidelock_grab2.wav", t = 1.6 },
-            { s = path .. "ak_jam_stuckbolt_in1.wav", t = 1.88 },
-            { s = path .. "m3_bolt_in_check.wav", t = 2.32 },
+            { s = path .. "pump_jam_slidelock_grab2.ogg", t = 1.6 },
+            { s = path .. "ak_jam_stuckbolt_in1.ogg", t = 1.88 },
+            { s = path .. "m3_bolt_in_check.ogg", t = 2.32 },
             { s = randspin, t = 2.74 },
             { s = randspin, t = 2.98 },
-            { s = path .. "pump_jam_shell_out2.wav", t = 3.01 },
+            { s = path .. "pump_jam_shell_out2.ogg", t = 3.01 },
             { s = randspin, t = 3.3 },
             { s = randspin, t = 3.6 },
             { s = randspin, t = 3.94 },
-            { s = path .. "m3_bolt_out_check.wav", t = 4.29 },
-            { s = path .. "m3_bolt_in.wav", t = 4.52 },
-            { s = path .. "m3_bolt_out.wav", t = 4.87 },
+            { s = path .. "m3_bolt_out_check.ogg", t = 4.29 },
+            { s = path .. "m3_bolt_in.ogg", t = 4.52 },
+            { s = path .. "m3_bolt_out.ogg", t = 4.87 },
             { s = randspin, t = 5.08 },
         },
     },
@@ -700,16 +700,16 @@ SWEP.Animations = {
             { s = randspin, t = 0.83 },
             { s = randspin, t = 1.22 },
             -- { s = randspin, t = 1.92 },
-            { s = path .. "pump_jam_slidelock_grab2.wav", t = 1.53 },
-            { s = path .. "ak_jam_stuckbolt_in_starting.wav", t = 1.7 },
-            { s = path .. "ak_jam_stuckbolt_in1.wav", t = 1.83 },
-            { s = path .. "ak_jam_stuckbolt_in2.wav", t = 2.29 },
+            { s = path .. "pump_jam_slidelock_grab2.ogg", t = 1.53 },
+            { s = path .. "ak_jam_stuckbolt_in_starting.ogg", t = 1.7 },
+            { s = path .. "ak_jam_stuckbolt_in1.ogg", t = 1.83 },
+            { s = path .. "ak_jam_stuckbolt_in2.ogg", t = 2.29 },
             { s = randspin, t = 2.7 },
-            { s = path .. "pump_jam_slidelock_grab2.wav", t = 3.54 },
-            { s = path .. "ak_jam_stuckbolt_in_starting.wav", t = 4.03 },
-            { s = path .. "m3_bolt_in_check.wav", t = 4.31 },
-            { s = path .. "pump_jam_shell_out2.wav", t = 4.45 },
-            { s = path .. "m3_bolt_out.wav", t = 4.7 },
+            { s = path .. "pump_jam_slidelock_grab2.ogg", t = 3.54 },
+            { s = path .. "ak_jam_stuckbolt_in_starting.ogg", t = 4.03 },
+            { s = path .. "m3_bolt_in_check.ogg", t = 4.31 },
+            { s = path .. "pump_jam_shell_out2.ogg", t = 4.45 },
+            { s = path .. "m3_bolt_out.ogg", t = 4.7 },
             { s = randspin, t = 5.04 },
         },
         EjectAt = 4.45
@@ -720,13 +720,13 @@ SWEP.Animations = {
             { s = randspin, t = 0.1 },
             { s = randspin, t = 0.83 },
             { s = randspin, t = 1.22 },
-            { s = path .. "pump_jam_slidelock_grab2.wav", t = 1.85 },
-            { s = path .. "ak_jam_stuckbolt_in1.wav", t = 1.97 },
-            { s = path .. "ak_jam_stuckbolt_in2.wav", t = 2.4 },
-            { s = path .. "ak_jam_stuckbolt_in_starting.wav", t = 2.82 },
-            { s = path .. "m3_bolt_in_check.wav", t = 3.17 },
-            { s = path .. "pump_jam_shell_out2.wav", t = 3.34 },
-            { s = path .. "m3_bolt_out.wav", t = 3.56 },
+            { s = path .. "pump_jam_slidelock_grab2.ogg", t = 1.85 },
+            { s = path .. "ak_jam_stuckbolt_in1.ogg", t = 1.97 },
+            { s = path .. "ak_jam_stuckbolt_in2.ogg", t = 2.4 },
+            { s = path .. "ak_jam_stuckbolt_in_starting.ogg", t = 2.82 },
+            { s = path .. "m3_bolt_in_check.ogg", t = 3.17 },
+            { s = path .. "pump_jam_shell_out2.ogg", t = 3.34 },
+            { s = path .. "m3_bolt_out.ogg", t = 3.56 },
             { s = randspin, t = 3.87 },
         },
         EjectAt = 3.34
@@ -736,56 +736,56 @@ SWEP.Animations = {
     ["jam_1"] = {
         Source = "jam_shell_pa", -- jam shell
         EventTable = {
-            { s = path .. "m3_pump_in.wav", t = 0.01 },
-            { s = path .. "m3_pump_out_check.wav", t = 0.25 },
+            { s = path .. "m3_pump_in.ogg", t = 0.01 },
+            { s = path .. "m3_pump_out_check.ogg", t = 0.25 },
             { s = randspin, t = 0.7 },
             { s = randspin, t = 1.42 },
 
             { s = randspin, t = 1.86 },
-            { s = path .. "pump_jam_slidelock_try2.wav", t = 2.29 },
-            { s = path .. "pump_jam_shell_out1.wav", t = 2.3},
-            { s = path .. "pump_jam_slidelock_try1.wav", t = 2.44 },
-            { s = path .. "pump_jam_slidelock_try4.wav", t = 2.64 },
+            { s = path .. "pump_jam_slidelock_try2.ogg", t = 2.29 },
+            { s = path .. "pump_jam_shell_out1.ogg", t = 2.3},
+            { s = path .. "pump_jam_slidelock_try1.ogg", t = 2.44 },
+            { s = path .. "pump_jam_slidelock_try4.ogg", t = 2.64 },
             { s = randspin, t = 2.88 },
-            { s = path .. "m3_pump_in.wav", t = 3.4 },
-            { s = path .. "m3_pump_out.wav", t = 3.69 },
+            { s = path .. "m3_pump_in.ogg", t = 3.4 },
+            { s = path .. "m3_pump_out.ogg", t = 3.69 },
             { s = randspin, t = 3.99 },
         },
     },
     ["jam_2"] = {
         Source = "jam_feed_pa", -- jam feed
         EventTable = {
-            { s = path .. "m3_pump_in.wav", t = 0.01 },
-            { s = path .. "pump_jam_slidelock_try1.wav", t = 0.25 },
+            { s = path .. "m3_pump_in.ogg", t = 0.01 },
+            { s = path .. "pump_jam_slidelock_try1.ogg", t = 0.25 },
             { s = randspin, t = 0.7 },
             { s = randspin, t = 1.42 },
 
-            { s = path .. "m3_pump_in_check.wav", t = 1.84 },
+            { s = path .. "m3_pump_in_check.ogg", t = 1.84 },
             { s = randspin, t = 2.22 },
-            { s = path .. "pump_jam_shell_out1.wav", t = 2.76 },
-            { s = path .. "pump_jam_shell_out2.wav", t = 3.35 },
+            { s = path .. "pump_jam_shell_out1.ogg", t = 2.76 },
+            { s = path .. "pump_jam_shell_out2.ogg", t = 3.35 },
             { s = randspin, t = 3.8 },
-            { s = path .. "m3_pump_out.wav", t = 4.03 },
-            { s = path .. "m3_pump_in.wav", t = 4.31 },
-            { s = path .. "m3_pump_out.wav", t = 4.67 },
+            { s = path .. "m3_pump_out.ogg", t = 4.03 },
+            { s = path .. "m3_pump_in.ogg", t = 4.31 },
+            { s = path .. "m3_pump_out.ogg", t = 4.67 },
             { s = randspin, t = 4.95 },
         },
     },
     ["jam_3"] = {
         Source = "jam_hardslide_pa", -- jam hard
         EventTable = {
-            { s = path .. "pump_jam_slidelock_try4.wav", t = 0.01 },
+            { s = path .. "pump_jam_slidelock_try4.ogg", t = 0.01 },
             { s = randspin, t = 0.7 },
             { s = randspin, t = 1.42 },
 
             { s = randspin, t = 1.94 },
-            { s = path .. "pump_jam_slidelock_try1.wav", t = 2.34 },
-            { s = path .. "pump_jam_slidelock_try2.wav", t = 2.79 },
-            { s = path .. "pump_jam_slidelock_try4.wav", t = 3.52 },
-            { s = path .. "pump_jam_slidelock_try3.wav", t = 4.28 },
-            { s = path .. "m3_pump_in.wav", t = 4.45 },
-            { s = path .. "pump_jam_shell_out2.wav", t = 4.62 },
-            { s = path .. "m3_pump_out.wav", t = 4.84 },
+            { s = path .. "pump_jam_slidelock_try1.ogg", t = 2.34 },
+            { s = path .. "pump_jam_slidelock_try2.ogg", t = 2.79 },
+            { s = path .. "pump_jam_slidelock_try4.ogg", t = 3.52 },
+            { s = path .. "pump_jam_slidelock_try3.ogg", t = 4.28 },
+            { s = path .. "m3_pump_in.ogg", t = 4.45 },
+            { s = path .. "pump_jam_shell_out2.ogg", t = 4.62 },
+            { s = path .. "m3_pump_out.ogg", t = 4.84 },
             { s = randspin, t = 5.15 },
         },
         EjectAt = 4.62
@@ -793,18 +793,18 @@ SWEP.Animations = {
     ["jam_4"] = {
         Source = "jam_softslide_pa", -- jam soft
         EventTable = {
-            { s = path .. "pump_jam_slidelock_try4.wav", t = 0.01 },
-            { s = path .. "pump_jam_slidelock_try1.wav", t = 0.25 },
+            { s = path .. "pump_jam_slidelock_try4.ogg", t = 0.01 },
+            { s = path .. "pump_jam_slidelock_try1.ogg", t = 0.25 },
             { s = randspin, t = 0.7 },
             { s = randspin, t = 1.42 },
 
             { s = randspin, t = 1.82 },
-            { s = path .. "pump_jam_slidelock_try1.wav", t = 2.29 },
-            { s = path .. "pump_jam_slidelock_try2.wav", t = 2.84 },
-            { s = path .. "pump_jam_slidelock_try3.wav", t = 3.24 },
-            { s = path .. "m3_pump_in.wav", t = 3.4 },
-            { s = path .. "pump_jam_shell_out2.wav", t = 3.55 },
-            { s = path .. "m3_pump_out.wav", t = 3.84 },
+            { s = path .. "pump_jam_slidelock_try1.ogg", t = 2.29 },
+            { s = path .. "pump_jam_slidelock_try2.ogg", t = 2.84 },
+            { s = path .. "pump_jam_slidelock_try3.ogg", t = 3.24 },
+            { s = path .. "m3_pump_in.ogg", t = 3.4 },
+            { s = path .. "pump_jam_shell_out2.ogg", t = 3.55 },
+            { s = path .. "m3_pump_out.ogg", t = 3.84 },
             { s = randspin, t = 4.11 },
         },
         EjectAt = 3.55
