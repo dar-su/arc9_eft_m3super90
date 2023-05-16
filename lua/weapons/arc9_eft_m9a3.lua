@@ -159,7 +159,7 @@ SWEP.VisualRecoilRoll = 6 -- Roll tilt for visual recoil.
 
 SWEP.VisualRecoilCenter = Vector(2, 17, 2) -- The "axis" of visual recoil. Where your hand is.
 
-SWEP.VisualRecoilPunch = 3 -- How far back visual recoil moves the gun.
+SWEP.VisualRecoilPunch = 1 -- How far back visual recoil moves the gun.
 SWEP.VisualRecoilPunchMultSights = 0.5
 SWEP.VisualRecoilPositionBumpUp = -0.009
 
@@ -265,7 +265,7 @@ SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_REVOLVER
 SWEP.WorldModelOffset = {
     Pos = Vector(-15.5, 5.5, -4),
     Ang = Angle(-7, 0, 180),
-    TPIKPos = Vector(-6, 6, -5), -- rpg
+    TPIKPos = Vector(-2, 8, -5), -- rpg
     TPIKAng = Angle(-5, 0, 180),
     Scale = 1
 }
