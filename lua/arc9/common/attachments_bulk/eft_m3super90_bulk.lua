@@ -351,3 +351,31 @@ ATT.MalfunctionMeanShotsToFailMult = 0.987
 ATT.ExcludeElements = {"eft_muzzle_12g_salvo", "eft_muzzle_12g_hexasup", "eft_muzzle_12g_gk02"}
 
 ARC9.LoadAttachment(ATT, "eft_m3s90_mag_13")
+
+
+///////////////////////////////////////      eft_m3s90_jonnwick
+
+ATT = {}
+
+ATT.PrintName = "Quad shell loading (like john wick!!)"
+ATT.CompactName = "Quad Load"
+ATT.Icon = Material("entities/eft_m3s90_attachments/quad.png", "mips smooth")
+ATT.Description = [[Make operator load shells by two at time. Pretty tactical. But also pretty cheaty as that technique is really fast lol compared to default reload.
+
+Those animations were in files, but left unused, same for reloads with 5 shells in palm. They are way cooler than what currently used in tarkov!
+Not presents in EFT, custom att.]]
+
+ATT.SortOrder = -11
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Category = {"eft_custom_slot_m3s90"}
+ATT.Attachments = {
+    {
+        PrintName = "Custom slot",
+        Pos = Vector(0, 0, 1),
+        Ang = Angle(0, 0, 0),
+        Category = {"eft_custom_slot", "eft_custom_slot_m3s90"},
+    },
+}
+
+ARC9.LoadAttachment(ATT, "eft_m3s90_jonnwick")

@@ -358,7 +358,7 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
 
     local clip = swep:Clip1()
     local empty = swep:Clip1() == 0
-    local maxclip = swep:GetMaxClip1()
+    local maxclip = swep:GetMaxClip1()+1
     local reserve = infitieammoconvar:GetBool() and 5 or math.Clamp(swep:GetOwner():GetAmmoCount(swep.Ammo), 0, 5)
     local sa = swep:GetValue("EFTSingleAction")
     
@@ -391,7 +391,8 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
         return empty and anim .. "_empty" or anim
     end
     
-    
+    local johnwick = elements["eft_m3s90_jonnwick"]
+
     if anim == "idle" then   
         if swep.fistful then swep.fistful = nil end
     elseif anim == "ready" then   
@@ -406,13 +407,11 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
         if clip == 0 then
             swep.onebyonestart2 = (reserve < 5) 
 
-            if sa then 
-                return "pa_ammo_in_first" 
-            else
-                return "sa_ammo_in_first_catch" 
-            end
+            return sa and "pa_ammo_in_first"  or "sa_ammo_in_first_catch" 
         end
 
+        if johnwick then swep.onebyonestart2 = true return "reload_start2" end
+        
         if maxclip - clip < 3 or reserve < 5 then
             swep.onebyonestart = true
             return "reload_start"
@@ -421,6 +420,10 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
         return "fistful_start"
 
     elseif anim == "reload_insert" then
+        if johnwick and maxclip - clip > 3 then swep.onebyonestart2 = true return "loop_quad_loading" end
+        if johnwick and maxclip - clip > 1 then swep.onebyonestart2 = true return "loop_twin_loading" end
+        -- if johnwick and maxclip - clip == 1 then return "reload_in_loop3" end
+
         if swep.onebyonestart then return "reload_in_loop" end
         if swep.onebyonestart2 then swep.onebyonestart2 = nil swep.onebyonestart = true return "reload_in_loop3" end
         
@@ -657,6 +660,34 @@ SWEP.Animations = {
         { s = randspin, t = 0.15 },
     }},
 
+    ["reload_start2"] = { Source = "reload_start2", Mult = 0.9, EventTable = {
+        { s = randspin, t = 0.03 },
+    }},
+    ["loop_quad_loading"] = { Source = "loop_quad_loading", RestoreAmmo = 3, Mult = 0.9, EventTable = { -- restore 3 cuz insert already gives +1
+        { s = pouchout, t = 0.05 },
+        { s = path .. "mr133_shell_pickup.ogg", t = 0.1 },
+        { s = path .. "mr133_magcover.ogg", t = 0.36 },
+        { s = shell_in, t = 0.57 },
+            { s = shell_in, t = 0.58 },
+        -- { s = shell_in, t = 0.64 },
+        { s = path .. "mr133_shell_pickup.ogg", t = 0.91 },
+        { s = path .. "mr133_magcover.ogg", t = 1.04 },
+        { s = shell_in, t = 1.23 },
+            { s = shell_in, t = 1.24 },
+        -- { s = shell_in, t = 1.36 },
+        { s = path .. "mr133_magcover.ogg", t = 1.63 },
+        { s = randspin, t = 1.67 },
+    }},
+    ["loop_twin_loading"] = { Source = "loop_twin_loading", RestoreAmmo = 1, Mult = 0.9, EventTable = { -- restore 1 cuz insert already gives +1
+        { s = pouchout, t = 0.05 },
+        { s = path .. "mr133_shell_pickup.ogg", t = 0.1 },
+        { s = path .. "mr133_magcover.ogg", t = 0.31 },
+        { s = shell_in, t = 0.45 },
+            { s = shell_in, t = 0.46 },
+        -- { s = shell_in, t = 0.55 },
+        { s = path .. "mr133_magcover.ogg", t = 0.79 },
+        { s = randspin, t = 0.92 },
+    }},
 
     ["jam_1_sa"] = {
         Source = "jam_shell_sa", -- jam shell
