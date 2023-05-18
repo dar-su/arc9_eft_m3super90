@@ -430,7 +430,7 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
         swep.roundcount = swep.roundcount + 1
 
         if swep.roundcount == 5 then 
-            if maxclip == clip then return "fistful5" end
+            if maxclip-1 == clip then return "fistful5" end
             if maxclip - clip < 3 then swep.onebyonestart2 = true end
 
             swep.roundcount = 0 
