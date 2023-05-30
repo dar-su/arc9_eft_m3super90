@@ -382,7 +382,7 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
                 net.WriteUInt(maxclip, 9)
                 net.Send(swep:GetOwner())
 
-                anim = "mag_check"
+                anim = (sa and "mag_check_pa" or "mag_check_sa") end
             end
         elseif rand == 1 then
             anim = "look"
@@ -559,11 +559,13 @@ SWEP.Animations = {
     ["look"] = { Source = "look", MinProgress = 0.95, FireASAP = true, EventTable = look },
     ["look_empty"] = { Source = "look_empty", MinProgress = 0.95, FireASAP = true, EventTable = look },
 
-    ["mag_check"] = { Source = "magcheck", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
-    ["mag_check_empty"] = { Source = "magcheck_empty", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
+    ["mag_check_pa"] = { Source = "magcheck", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
+    ["mag_check_pa_empty"] = { Source = "ammo_check_emptypa", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
+    ["mag_check_sa"] = { Source = "magcheck", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
+    ["mag_check_sa_empty"] = { Source = "magcheck_empty", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
 
     ["checkchamber_pa"] = { Source = "checkchamber_pa", MinProgress = 0.95, FireASAP = true, EventTable = checkchamber_pa },
-    ["checkchamber_pa_empty"] = { Source = "checkchamber_pa", MinProgress = 0.95, FireASAP = true, EventTable = checkchamber_pa },
+    ["checkchamber_pa_empty"] = { Source = "pa_chamber_check_empty", MinProgress = 0.95, FireASAP = true, EventTable = checkchamber_pa },
     ["checkchamber_sa"] = { Source = "checkchamber_sa", MinProgress = 0.95, FireASAP = true, EventTable = checkchamber_sa },
     ["checkchamber_sa_empty"] = { Source = "checkchamber_sa_empty", MinProgress = 0.95, FireASAP = true, EventTable = checkchamber_sa_empty },
 
