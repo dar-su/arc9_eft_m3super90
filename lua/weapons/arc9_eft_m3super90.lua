@@ -382,10 +382,11 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
                 net.WriteUInt(maxclip, 9)
                 net.Send(swep:GetOwner())
 
-                anim = (sa and "mag_check_pa" or "mag_check_sa") end
+                anim = (sa and "mag_check_pa" or "mag_check_sa")
+                if clip == 1 then return "mag_check_pa_empty" end -- its in chamber but we'll play empty mag inspect anim with closed bolt
             end
         elseif rand == 1 then
-            anim = "look"
+            return "look"
         end
         
         return empty and anim .. "_empty" or anim
