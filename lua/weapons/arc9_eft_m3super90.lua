@@ -386,7 +386,8 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
                 if clip == 1 then return "mag_check_pa_empty" end -- its in chamber but we'll play empty mag inspect anim with closed bolt
             end
         elseif rand == 1 then
-            return "look"
+            anim = "look"
+            if empty and sa then return "look_empty_pa" end -- to not play empty open bolt anim on pumpaction
         end
         
         return empty and anim .. "_empty" or anim
@@ -559,6 +560,7 @@ SWEP.Animations = {
 
     ["look"] = { Source = "look", MinProgress = 0.95, FireASAP = true, EventTable = look },
     ["look_empty"] = { Source = "look_empty", MinProgress = 0.95, FireASAP = true, EventTable = look },
+    ["look_empty_pa"] = { Source = "look_empty_pa", MinProgress = 0.95, FireASAP = true, EventTable = look },
 
     ["mag_check_pa"] = { Source = "magcheck", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
     ["mag_check_pa_empty"] = { Source = "ammo_check_emptypa", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
@@ -670,25 +672,25 @@ SWEP.Animations = {
         { s = pouchout, t = 0.05 },
         { s = path .. "mr133_shell_pickup.ogg", t = 0.1 },
         { s = path .. "mr133_magcover.ogg", t = 0.36 },
-        { s = shell_in, t = 0.57 },
-            { s = shell_in, t = 0.58 },
+        { s = path .. "m3_shell_in_owo.ogg", t = 0.57 },
+            -- { s = shell_in, t = 0.58 },
         -- { s = shell_in, t = 0.64 },
         { s = path .. "mr133_shell_pickup.ogg", t = 0.91 },
-        { s = path .. "mr133_magcover.ogg", t = 1.04 },
-        { s = shell_in, t = 1.23 },
-            { s = shell_in, t = 1.24 },
+        -- { s = path .. "mr133_magcover.ogg", t = 1.00 },
+        { s = path .. "m3_shell_in_owo.ogg", t = 1.23 },
+            -- { s = shell_in, t = 1.24 },
         -- { s = shell_in, t = 1.36 },
-        { s = path .. "mr133_magcover.ogg", t = 1.63 },
+        -- { s = path .. "mr133_magcover.ogg", t = 1.60 },
         { s = randspin, t = 1.67 },
     }},
     ["loop_twin_loading"] = { Source = "loop_twin_loading", RestoreAmmo = 1, Mult = 0.9, EventTable = { -- restore 1 cuz insert already gives +1
         { s = pouchout, t = 0.05 },
         { s = path .. "mr133_shell_pickup.ogg", t = 0.1 },
         { s = path .. "mr133_magcover.ogg", t = 0.31 },
-        { s = shell_in, t = 0.45 },
-            { s = shell_in, t = 0.46 },
+        { s = path .. "m3_shell_in_owo.ogg", t = 0.45 },
+            -- { s = shell_in, t = 0.46 },
         -- { s = shell_in, t = 0.55 },
-        { s = path .. "mr133_magcover.ogg", t = 0.79 },
+        -- { s = path .. "mr133_magcover.ogg", t = 0.79 },
         { s = randspin, t = 0.92 },
     }},
 
