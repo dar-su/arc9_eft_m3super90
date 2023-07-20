@@ -171,6 +171,8 @@ SWEP.VisualRecoilPositionBumpUpRTScope = 0.00
 SWEP.VisualRecoilPositionBumpUpHipFire = 0.02
 
 
+SWEP.RecoilKick = 0
+SWEP.RecoilKickDamping = 10
 
 
 -------------------------- SPREAD
