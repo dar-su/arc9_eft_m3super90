@@ -159,7 +159,7 @@ SWEP.VisualRecoilPositionBumpUp = -0.31 -- same but in sights
 SWEP.VisualRecoilPositionBumpUpRTScope = 0.05 -- same but in rt scopes, you probably should keep it same as sight value, i guess it doesn't matter anymore after recoil update
 
 SWEP.VisualRecoilCenter = Vector(2, 20, 2) -- ugh, i dont now what to set it too, but probably it should be diffferent on each gun
-SWEP.VisualRecoilCenterHipFire = Vector(2, 25, 2)
+-- SWEP.VisualRecoilCenterHipFire = Vector(2, 25, 2)
 local EFT_ShotsToSwitchToFullAutoBehaviur = 2 -- how many shots for switch to fullauto stats from semi/burst, + 2 shots afterwards are lerping. you probably should not touch this but ok
 
 SWEP.RecoilKick = 0.25 -- camera roll each shot + makes camera go more up when fullautoing
@@ -354,8 +354,8 @@ SWEP.DryFireSound = "arc9_eft_shared/weap_trigger_empty.ogg"
 
 SWEP.SuppressEmptySuffix = true 
 
-SWEP.EnterSightsSound = "arc9_eft_shared/weap_in.ogg"
-SWEP.ExitSightsSound = "arc9_eft_shared/weap_handoff.ogg"
+SWEP.EnterSightsSound = ARC9EFT.ADSPistol
+SWEP.ExitSightsSound = ARC9EFT.ADSPistol
 
 SWEP.Hook_TranslateAnimation = function(swep, anim)
     local elements = swep:GetElements()
@@ -826,7 +826,7 @@ SWEP.EFTErgo = 70
 if ARC9EFTBASE then
     SWEP.AimDownSightsTimeHook = ARC9EFT.ErgoHook or nil
     SWEP.HoldBreathTimeHook = ARC9EFT.ErgoBreathHook or nil
-    SWEP.HookP_TranslateSound = ARC9EFT.ErgoAdsVolume or nil
+    -- SWEP.HookP_TranslateSound = ARC9EFT.ErgoAdsVolume or nil
     SWEP.SpreadHook = ARC9EFT.SpreadBonus or nil
 else
     print("Dum! install arc9 eft shared!!!!!!!!!!!!!!")
