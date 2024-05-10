@@ -477,7 +477,6 @@ local rst_magcheck = {
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
-        Time = 1000
     },
 
     ["ready"] = {
@@ -588,6 +587,7 @@ SWEP.Animations = {
             { s = "arc9_eft_shared/weap_round_out.ogg", t = 2.18 },
             { s =  pathgenericpistol .. "pm_slider_out.ogg", t = 2.38 },
             { s = randspin, t = 2.7 },
+            { s = ARC9EFT.Shells9mm, t = 3.1 },
         },
         -- EjectAt = 1.97
     },        
@@ -623,6 +623,7 @@ SWEP.Animations = {
             { s = "arc9_eft_shared/weap_round_out.ogg", t = 2.51 },
             { s =  pathgenericpistol .. "grach_slider_in.ogg", t = 2.79 },
             { s = randspin, t = 3.24 },
+            { s = ARC9EFT.Shells9mm, t = 3.5 },
         },
         -- EjectAt = 2.52
     },        
