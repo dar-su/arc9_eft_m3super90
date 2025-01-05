@@ -68,6 +68,8 @@ ATT.Description = [[Black colored frame.
 
 Not presents in EFT, custom att.]]
 
+ATT.AttNotForNPCs = true 
+
 ATT.SortOrder = 0
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 
