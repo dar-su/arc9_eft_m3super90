@@ -67,7 +67,7 @@ SWEP.SuppressEmptySuffix = false
 SWEP.NoFiremodeWhenEmpty = true 
 SWEP.Firemodes = {
     { Mode = 1, PrintName = "Pump-action", EFTSingleAction = true, ManualAction = true, SuppressEmptySuffix = true, NoShellEject = true, RPM = 999, SlamFire = true, RecoilUpMult = 0.7 },
-    { Mode = 1, PrintName = "Semi auto", MalfunctionMeanShotsToFail = 0.7 },
+    { Mode = 1, PrintName = "Semi auto", MalfunctionMeanShotsToFailMult = 0.8 },
 }
 
 -- SWEP.ManualAction = true
