@@ -5,18 +5,18 @@ SWEP.Spawnable = true
 
 ------------------------- |||           Trivia            ||| -------------------------
 
-SWEP.PrintName = "Beretta M9A3"
-SWEP.Description = [[The Beretta M9A3 is the newest addition to the M9 series of pistols. It was designed for military and police forces, as well as for sport and a home defense use. The main features of the A3 generation are a more ergonomic and durable FDE coating.]]
+SWEP.PrintName = ARC9:GetPhrase("eft_weapon_m9a3")
+SWEP.Description = "eft_weapon_m9a3_desc"
 
-SWEP.Class = ARC9:GetPhrase("eft_class_weapon_pist")
+SWEP.Class = "eft_class_weapon_pist"
 SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_pist")
 
 SWEP.Trivia = {
-    [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = "Beretta",
-    [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = "9x19mm Parabellum",
-    [ARC9:GetPhrase("eft_trivia_act") .. "3"]= ARC9:GetPhrase("eft_trivia_act_recoil"),
-    [ARC9:GetPhrase("eft_trivia_country") .. "4"] = ARC9:GetPhrase("eft_trivia_country_italy"),
-    [ARC9:GetPhrase("eft_trivia_year") .. "5"] = "2015"
+    ["eft_trivia_manuf1"] = "eft_trivia_manuf_beretta",
+    ["eft_trivia_cal2"] = "eft_trivia_calibr_9x19",
+    ["eft_trivia_act3"]= "eft_trivia_act_recoil",
+    ["eft_trivia_country4"] = "eft_trivia_country_usa_italy",
+    ["eft_trivia_year5"] = "2015"
 }
 
 SWEP.StandardPresets = false 

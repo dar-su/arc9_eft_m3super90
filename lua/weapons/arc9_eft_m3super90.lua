@@ -5,18 +5,18 @@ SWEP.Spawnable = true
 
 ------------------------- |||           Trivia            ||| -------------------------
 
-SWEP.PrintName = "Benelli M3 Super 90"
-SWEP.Description = [[The Benelli M3 S90 is a dual-mode shotgun designed and manufactured by Benelli. The M3 is notable for allowing the user to choose between semi-automatic or pump-action operation. Benelli shotguns show excellent ballistic performance, and the finish and fine workmanship are the epitome of traditional Italian style.]]
+SWEP.PrintName = ARC9:GetPhrase("eft_weapon_m3super90")
+SWEP.Description = "eft_weapon_m3super90_desc"
 
-SWEP.Class = ARC9:GetPhrase("eft_class_weapon_dualsg")
+SWEP.Class = "eft_class_weapon_dualsg"
 SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_sg")
 
 SWEP.Trivia = {
-    [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = "Benelli Armi SpA",
-    [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = "12 gauge",
-    [ARC9:GetPhrase("eft_trivia_act") .. "3"]= ARC9:GetPhrase("eft_trivia_act_recoil"),
-    [ARC9:GetPhrase("eft_trivia_country") .. "4"] = ARC9:GetPhrase("eft_trivia_country_italy"),
-    [ARC9:GetPhrase("eft_trivia_year") .. "5"] = "1990"
+    ["eft_trivia_manuf1"] = "eft_trivia_manuf_benelli",
+    ["eft_trivia_cal2"] = "eft_trivia_calibr_12g",
+    ["eft_trivia_act3"]= "eft_trivia_act_recoil",
+    ["eft_trivia_country4"] = "eft_trivia_country_usa_italy",
+    ["eft_trivia_year5"] = "1990"
 }
 
 SWEP.StandardPresets = false 
